@@ -11,7 +11,9 @@
 
 @interface ReadBookViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
+/** 每一页controller */
 @property (nonatomic, strong) UIPageViewController *pageViewController;
+/** 数据源 */
 @property (nonatomic, strong) NSArray *pageArray;
 
 @end
@@ -35,7 +37,7 @@
 #pragma mark - delegate
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
-    NSUInteger index = [self indexOfViewController:(ContentViewController *)viewController];
+    NSUInteger index = [self indexWithViewController:(ContentViewController *)viewController];
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
     }
@@ -46,11 +48,10 @@
     return [self viewControllerWithIndex:index];
 }
 
-#pragma mark 返回下一个ViewController对象
-
+/** 拿到下一个controller */
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     
-    NSUInteger index = [self indexOfViewController:(ContentViewController *)viewController];
+    NSUInteger index = [self indexWithViewController:(ContentViewController *)viewController];
     if (index == NSNotFound) {
         return nil;
     }
@@ -64,6 +65,7 @@
 }
 #pragma mark - event response
 #pragma mark - private methods
+/** 通过下标获取controller */
 - (ContentViewController *)viewControllerWithIndex:(NSUInteger)index {
     if (self.pageArray.count == 0 || (index > self.pageArray.count)) {
         return nil;
@@ -72,9 +74,8 @@
     vc.content = self.pageArray[index];
     return vc;
 }
-#pragma mark - 数组元素值，得到下标值
-
-- (NSUInteger)indexOfViewController:(ContentViewController *)viewController {
+#pragma mark - 通过controller获取下标
+- (NSUInteger)indexWithViewController:(ContentViewController *)viewController {
     return [self.pageArray indexOfObject:viewController.content];
 }
 #pragma mark - getters and setters
