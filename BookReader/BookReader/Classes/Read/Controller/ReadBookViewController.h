@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BRBookModel.h"
 @interface ReadBookViewController : UIViewController
-
+@property (nonatomic, strong) BRBookModel *model;
 @end

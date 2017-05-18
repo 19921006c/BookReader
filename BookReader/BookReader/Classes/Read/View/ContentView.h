@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BRPageModel.h"
 @interface ContentView : UIView
+
+@property (nonatomic, strong) BRPageModel *model;
 
 @end

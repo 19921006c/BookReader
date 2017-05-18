@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D848BFBE1ECD2D6A0012AB3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFB11ECD2D6A0012AB3B /* ViewController.m */; };
+		D848BFBF1ECD2D6A0012AB3B /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFB71ECD2D6A0012AB3B /* ContentViewController.m */; };
+		D848BFC01ECD2D6A0012AB3B /* ReadBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFB91ECD2D6A0012AB3B /* ReadBookViewController.m */; };
+		D848BFC11ECD2D6A0012AB3B /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFBD1ECD2D6A0012AB3B /* ContentView.m */; };
+		D848BFD01ECD31A40012AB3B /* BRMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFCF1ECD31A40012AB3B /* BRMainNavigationController.m */; };
+		D848BFD31ECD32F50012AB3B /* BRMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFD21ECD32F50012AB3B /* BRMainTabBarController.m */; };
+		D848BFD61ECD3B0F0012AB3B /* BRBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFD51ECD3B0F0012AB3B /* BRBookModel.m */; };
+		D848BFD91ECD3BD50012AB3B /* BRPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFD81ECD3BD50012AB3B /* BRPageModel.m */; };
+		D848BFDC1ECD7E8A0012AB3B /* BRPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFDB1ECD7E8A0012AB3B /* BRPageViewController.m */; };
 		D86458261ECC570000FA4D7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D86458251ECC570000FA4D7D /* main.m */; };
 		D86458291ECC570000FA4D7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D86458281ECC570000FA4D7D /* AppDelegate.m */; };
-		D864582F1ECC570000FA4D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D864582D1ECC570000FA4D7D /* Main.storyboard */; };
 		D86458311ECC570000FA4D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86458301ECC570000FA4D7D /* Assets.xcassets */; };
 		D86458341ECC570000FA4D7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86458321ECC570000FA4D7D /* LaunchScreen.storyboard */; };
 		D864583F1ECC570000FA4D7D /* BookReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D864583E1ECC570000FA4D7D /* BookReaderTests.m */; };
 		D864584A1ECC570000FA4D7D /* BookReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D86458491ECC570000FA4D7D /* BookReaderUITests.m */; };
 		D86458601ECC573000FA4D7D /* 花间提壶方大厨.txt in Resources */ = {isa = PBXBuildFile; fileRef = D86458571ECC573000FA4D7D /* 花间提壶方大厨.txt */; };
-		D86458611ECC573000FA4D7D /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D86458591ECC573000FA4D7D /* ContentView.m */; };
-		D86458621ECC573000FA4D7D /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D864585B1ECC573000FA4D7D /* ContentViewController.m */; };
-		D86458631ECC573000FA4D7D /* ReadBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D864585D1ECC573000FA4D7D /* ReadBookViewController.m */; };
-		D86458641ECC573000FA4D7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D864585F1ECC573000FA4D7D /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +43,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D848BFB01ECD2D6A0012AB3B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D848BFB11ECD2D6A0012AB3B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D848BFB61ECD2D6A0012AB3B /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		D848BFB71ECD2D6A0012AB3B /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		D848BFB81ECD2D6A0012AB3B /* ReadBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookViewController.h; sourceTree = "<group>"; };
+		D848BFB91ECD2D6A0012AB3B /* ReadBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookViewController.m; sourceTree = "<group>"; };
+		D848BFBC1ECD2D6A0012AB3B /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
+		D848BFBD1ECD2D6A0012AB3B /* ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
+		D848BFC41ECD2EE70012AB3B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D848BFC51ECD2F280012AB3B /* HeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderFile.h; sourceTree = "<group>"; };
+		D848BFC61ECD2F980012AB3B /* DefineFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineFile.h; sourceTree = "<group>"; };
+		D848BFCE1ECD31A40012AB3B /* BRMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRMainNavigationController.h; sourceTree = "<group>"; };
+		D848BFCF1ECD31A40012AB3B /* BRMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRMainNavigationController.m; sourceTree = "<group>"; };
+		D848BFD11ECD32F50012AB3B /* BRMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRMainTabBarController.h; sourceTree = "<group>"; };
+		D848BFD21ECD32F50012AB3B /* BRMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRMainTabBarController.m; sourceTree = "<group>"; };
+		D848BFD41ECD3B0F0012AB3B /* BRBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBookModel.h; sourceTree = "<group>"; };
+		D848BFD51ECD3B0F0012AB3B /* BRBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRBookModel.m; sourceTree = "<group>"; };
+		D848BFD71ECD3BD50012AB3B /* BRPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPageModel.h; sourceTree = "<group>"; };
+		D848BFD81ECD3BD50012AB3B /* BRPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPageModel.m; sourceTree = "<group>"; };
+		D848BFDA1ECD7E8A0012AB3B /* BRPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPageViewController.h; sourceTree = "<group>"; };
+		D848BFDB1ECD7E8A0012AB3B /* BRPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPageViewController.m; sourceTree = "<group>"; };
 		D86458211ECC570000FA4D7D /* BookReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86458251ECC570000FA4D7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D86458271ECC570000FA4D7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D86458281ECC570000FA4D7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D864582E1ECC570000FA4D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D86458301ECC570000FA4D7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D86458331ECC570000FA4D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D86458351ECC570000FA4D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,14 +78,6 @@
 		D86458491ECC570000FA4D7D /* BookReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookReaderUITests.m; sourceTree = "<group>"; };
 		D864584B1ECC570000FA4D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86458571ECC573000FA4D7D /* 花间提壶方大厨.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "花间提壶方大厨.txt"; sourceTree = "<group>"; };
-		D86458581ECC573000FA4D7D /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
-		D86458591ECC573000FA4D7D /* ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
-		D864585A1ECC573000FA4D7D /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
-		D864585B1ECC573000FA4D7D /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
-		D864585C1ECC573000FA4D7D /* ReadBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookViewController.h; sourceTree = "<group>"; };
-		D864585D1ECC573000FA4D7D /* ReadBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookViewController.m; sourceTree = "<group>"; };
-		D864585E1ECC573000FA4D7D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D864585F1ECC573000FA4D7D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +105,122 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D848BFAD1ECD2D6A0012AB3B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D848BFC71ECD313C0012AB3B /* Main */,
+				D848BFC21ECD2EDA0012AB3B /* Category */,
+				D848BFC31ECD2EDA0012AB3B /* Tool */,
+				D848BFAE1ECD2D6A0012AB3B /* Home */,
+				D848BFB41ECD2D6A0012AB3B /* Read */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D848BFAE1ECD2D6A0012AB3B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D848BFAF1ECD2D6A0012AB3B /* Controller */,
+				D848BFB21ECD2D6A0012AB3B /* Model */,
+				D848BFB31ECD2D6A0012AB3B /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D848BFAF1ECD2D6A0012AB3B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D848BFB01ECD2D6A0012AB3B /* ViewController.h */,
+				D848BFB11ECD2D6A0012AB3B /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D848BFB21ECD2D6A0012AB3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D848BFB31ECD2D6A0012AB3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D848BFB41ECD2D6A0012AB3B /* Read */ = {
+			isa = PBXGroup;
+			children = (
+				D848BFB51ECD2D6A0012AB3B /* Controller */,
+				D848BFBA1ECD2D6A0012AB3B /* Model */,
+				D848BFBB1ECD2D6A0012AB3B /* View */,
+			);
+			path = Read;
+			sourceTree = "<group>";
+		};
+		D848BFB51ECD2D6A0012AB3B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D848BFB61ECD2D6A0012AB3B /* ContentViewController.h */,
+				D848BFB71ECD2D6A0012AB3B /* ContentViewController.m */,
+				D848BFB81ECD2D6A0012AB3B /* ReadBookViewController.h */,
+				D848BFB91ECD2D6A0012AB3B /* ReadBookViewController.m */,
+				D848BFDA1ECD7E8A0012AB3B /* BRPageViewController.h */,
+				D848BFDB1ECD7E8A0012AB3B /* BRPageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D848BFBA1ECD2D6A0012AB3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D848BFD41ECD3B0F0012AB3B /* BRBookModel.h */,
+				D848BFD51ECD3B0F0012AB3B /* BRBookModel.m */,
+				D848BFD71ECD3BD50012AB3B /* BRPageModel.h */,
+				D848BFD81ECD3BD50012AB3B /* BRPageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D848BFBB1ECD2D6A0012AB3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D848BFBC1ECD2D6A0012AB3B /* ContentView.h */,
+				D848BFBD1ECD2D6A0012AB3B /* ContentView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D848BFC21ECD2EDA0012AB3B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D848BFC31ECD2EDA0012AB3B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				D848BFC41ECD2EE70012AB3B /* PrefixHeader.pch */,
+				D848BFC51ECD2F280012AB3B /* HeaderFile.h */,
+				D848BFC61ECD2F980012AB3B /* DefineFile.h */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		D848BFC71ECD313C0012AB3B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D848BFCE1ECD31A40012AB3B /* BRMainNavigationController.h */,
+				D848BFCF1ECD31A40012AB3B /* BRMainNavigationController.m */,
+				D848BFD11ECD32F50012AB3B /* BRMainTabBarController.h */,
+				D848BFD21ECD32F50012AB3B /* BRMainTabBarController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		D86458181ECC570000FA4D7D = {
 			isa = PBXGroup;
 			children = (
@@ -112,18 +244,10 @@
 		D86458231ECC570000FA4D7D /* BookReader */ = {
 			isa = PBXGroup;
 			children = (
+				D848BFAD1ECD2D6A0012AB3B /* Classes */,
 				D86458571ECC573000FA4D7D /* 花间提壶方大厨.txt */,
-				D86458581ECC573000FA4D7D /* ContentView.h */,
-				D86458591ECC573000FA4D7D /* ContentView.m */,
-				D864585A1ECC573000FA4D7D /* ContentViewController.h */,
-				D864585B1ECC573000FA4D7D /* ContentViewController.m */,
-				D864585C1ECC573000FA4D7D /* ReadBookViewController.h */,
-				D864585D1ECC573000FA4D7D /* ReadBookViewController.m */,
-				D864585E1ECC573000FA4D7D /* ViewController.h */,
-				D864585F1ECC573000FA4D7D /* ViewController.m */,
 				D86458271ECC570000FA4D7D /* AppDelegate.h */,
 				D86458281ECC570000FA4D7D /* AppDelegate.m */,
-				D864582D1ECC570000FA4D7D /* Main.storyboard */,
 				D86458301ECC570000FA4D7D /* Assets.xcassets */,
 				D86458321ECC570000FA4D7D /* LaunchScreen.storyboard */,
 				D86458351ECC570000FA4D7D /* Info.plist */,
@@ -220,6 +344,7 @@
 		D86458191ECC570000FA4D7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BR;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = joe;
 				TargetAttributes = {
@@ -267,7 +392,6 @@
 				D86458601ECC573000FA4D7D /* 花间提壶方大厨.txt in Resources */,
 				D86458341ECC570000FA4D7D /* LaunchScreen.storyboard in Resources */,
 				D86458311ECC570000FA4D7D /* Assets.xcassets in Resources */,
-				D864582F1ECC570000FA4D7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,12 +416,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86458641ECC573000FA4D7D /* ViewController.m in Sources */,
-				D86458631ECC573000FA4D7D /* ReadBookViewController.m in Sources */,
-				D86458621ECC573000FA4D7D /* ContentViewController.m in Sources */,
+				D848BFC01ECD2D6A0012AB3B /* ReadBookViewController.m in Sources */,
+				D848BFBF1ECD2D6A0012AB3B /* ContentViewController.m in Sources */,
+				D848BFD61ECD3B0F0012AB3B /* BRBookModel.m in Sources */,
+				D848BFC11ECD2D6A0012AB3B /* ContentView.m in Sources */,
+				D848BFD91ECD3BD50012AB3B /* BRPageModel.m in Sources */,
+				D848BFBE1ECD2D6A0012AB3B /* ViewController.m in Sources */,
+				D848BFDC1ECD7E8A0012AB3B /* BRPageViewController.m in Sources */,
+				D848BFD31ECD32F50012AB3B /* BRMainTabBarController.m in Sources */,
+				D848BFD01ECD31A40012AB3B /* BRMainNavigationController.m in Sources */,
 				D86458291ECC570000FA4D7D /* AppDelegate.m in Sources */,
 				D86458261ECC570000FA4D7D /* main.m in Sources */,
-				D86458611ECC573000FA4D7D /* ContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,14 +462,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D864582D1ECC570000FA4D7D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D864582E1ECC570000FA4D7D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D86458321ECC570000FA4D7D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,6 +565,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/joe/Documents/CodeLib/BookReader/BookReader/BookReader/Classes/Tool/PrefixHeader.pch;
 				INFOPLIST_FILE = BookReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Joe.BookReader;
@@ -455,6 +578,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/joe/Documents/CodeLib/BookReader/BookReader/BookReader/Classes/Tool/PrefixHeader.pch;
 				INFOPLIST_FILE = BookReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Joe.BookReader;
@@ -527,6 +652,7 @@
 				D86458501ECC570000FA4D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D86458511ECC570000FA4D7D /* Build configuration list for PBXNativeTarget "BookReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +661,7 @@
 				D86458531ECC570000FA4D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D86458541ECC570000FA4D7D /* Build configuration list for PBXNativeTarget "BookReaderUITests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +670,7 @@
 				D86458561ECC570000FA4D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

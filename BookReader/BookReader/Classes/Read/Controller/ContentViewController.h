@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class BRPageModel;
 @interface ContentViewController : UIViewController
-@property (nonatomic, copy) NSString *content;
+@property (nonatomic, strong) BRPageModel *model;
 @end
