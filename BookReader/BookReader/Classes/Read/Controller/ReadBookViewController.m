@@ -7,14 +7,11 @@
 //
 
 #import "ReadBookViewController.h"
-#import "ContentViewController.h"
-
-@interface ReadBookViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+#import "BRPageViewController.h"
+@interface ReadBookViewController ()<UIGestureRecognizerDelegate>
 
 /** 每一页controller */
-@property (nonatomic, strong) UIPageViewController *pageViewController;
-/** 数据源 */
-//@property (nonatomic, strong) NSArray *pageArray;
+@property (nonatomic, strong) BRPageViewController *pageViewController;
 /** 临时btn */
 @property (nonatomic, strong) UIButton *closeButton;
 
@@ -26,15 +23,20 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    //拿到第一页
-    ContentViewController *vc = [self viewControllerWithIndex:0];
-    NSArray *vcs = [NSArray arrayWithObject:vc];
-    [self.pageViewController setViewControllers:vcs direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
-    self.pageViewController.view.frame = self.view.bounds;
     
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.view addSubview:self.closeButton];
+    [self.view addGestureRecognizer:({
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showOperationMenu)];
+        tap.delegate = self;
+        tap;
+    })];
+}
+- (void)showOperationMenu
+{
+    
+    
 }
 - (BOOL)prefersStatusBarHidden
 {
@@ -47,6 +49,7 @@
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     self.closeButton.frame = CGRectMake(0, kMainScreenHeight - 50, 50, 50);
+    self.pageViewController.view.frame = self.view.bounds;
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -55,60 +58,19 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 #pragma mark - delegate
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    
-    NSUInteger index = [self indexWithViewController:(ContentViewController *)viewController];
-    if ((index == 0) || (index == NSNotFound)) {
-        return nil;
-    }
-    index--;
-    // 返回的ViewController，将被添加到相应的UIPageViewController对象上。
-    // UIPageViewController对象会根据UIPageViewControllerDataSource协议方法,自动来维护次序
-    // 不用我们去操心每个ViewController的顺序问题
-    return [self viewControllerWithIndex:index];
-}
 
-/** 拿到下一个controller */
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    
-    NSUInteger index = [self indexWithViewController:(ContentViewController *)viewController];
-    if (index == NSNotFound) {
-        return nil;
-    }
-    index++;
-    if (index == [self.model.pageModelArray count]) {
-        return nil;
-    }
-    return [self viewControllerWithIndex:index];
-    
-    
-}
 #pragma mark - event response
 - (void)close {
     [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark - private methods
-/** 通过下标获取controller */
-- (ContentViewController *)viewControllerWithIndex:(NSUInteger)index {
-    if (self.model.pageModelArray.count == 0 || (index > self.model.pageModelArray.count)) {
-        return nil;
-    }
-    ContentViewController *vc = [[ContentViewController alloc] init];
-    vc.model = self.model.pageModelArray[index];
-    return vc;
-}
-#pragma mark - 通过controller获取下标
-- (NSUInteger)indexWithViewController:(ContentViewController *)viewController {
-    return [self.model.pageModelArray indexOfObject:viewController.model];
-}
+
 #pragma mark - getters and setters
-- (UIPageViewController *)pageViewController
+- (BRPageViewController *)pageViewController
 {
     if (!_pageViewController) {
         NSDictionary *options = @{UIPageViewControllerOptionInterPageSpacingKey : @(1)};
-        _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:options];
-        _pageViewController.delegate = self;
-        _pageViewController.dataSource = self;
+        _pageViewController = [[BRPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:options];
     }
     return _pageViewController;
 }
@@ -120,5 +82,11 @@
         [_closeButton setBackgroundColor:[UIColor blueColor]];
     }
     return _closeButton;
+}
+- (void)setModel:(BRBookModel *)model
+{
+    _model = model;
+    
+    self.pageViewController.model = model;
 }
 @end

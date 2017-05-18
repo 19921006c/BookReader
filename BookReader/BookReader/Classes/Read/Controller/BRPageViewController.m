@@ -9,12 +9,31 @@
 #import "BRPageViewController.h"
 #import "ContentViewController.h"
 #import "BRBookModel.h"
-@interface BRPageViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@interface BRPageViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource, UIGestureRecognizerDelegate>
 
 @end
 
 @implementation BRPageViewController
 #pragma mark - life cycle
+- (instancetype)initWithTransitionStyle:(UIPageViewControllerTransitionStyle)style navigationOrientation:(UIPageViewControllerNavigationOrientation)navigationOrientation options:(NSDictionary<NSString *,id> *)options
+{
+    if (self = [super initWithTransitionStyle:style navigationOrientation:navigationOrientation options:options]) {
+        self.delegate = self;
+        self.dataSource = self;
+    }
+    return self;
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    //拿到第一页
+    ContentViewController *vc = [self viewControllerWithIndex:0];
+    NSArray *vcs = [NSArray arrayWithObject:vc];
+    [self setViewControllers:vcs direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+    for (UIGestureRecognizer *ges in self.view.gestureRecognizers) {
+        ges.delegate = self;
+    }
+}
 #pragma mark - delegate
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
@@ -41,8 +60,24 @@
         return nil;
     }
     return [self viewControllerWithIndex:index];
-    
-    
+}
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    //Touch gestures below top bar should not make the page turn.
+    //EDITED Check for only Tap here instead.
+    NSLog(@"number = %ld", gestureRecognizer.numberOfTouches);
+    if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) {
+        CGPoint touchPoint = [touch locationInView:self.view];
+        if (touchPoint.y > 40) {
+            NSLog(@"NO");
+            return NO;
+        }
+        else if (touchPoint.x > 50 && touchPoint.x < 430) {//Let the buttons in the middle of the top bar receive the touch
+            NSLog(@"NO");
+            return NO;
+        }
+    }
+    NSLog(@"YES");
+    return YES;
 }
 #pragma mark - event response
 #pragma mark - private methods
@@ -60,20 +95,9 @@
     return [self.model.pageModelArray indexOfObject:viewController.model];
 }
 #pragma mark - getters and setters
--(instancetype)init
-{
-    if (self = [super init]) {
-        self.delegate = self;
-        self.dataSource = self;
-    }
-    return self;
-}
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    
-}
+
+
 
 
 @end
