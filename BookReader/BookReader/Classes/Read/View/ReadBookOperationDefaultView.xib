@@ -65,25 +65,37 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-wq-efo">
                             <rect key="frame" x="0.0" y="30" width="375" height="70"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gel-qj-dDL">
+                                <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gel-qj-dDL" userLabel="setting">
                                     <rect key="frame" x="0.0" y="0.0" width="94" height="70"/>
                                     <state key="normal" image="textReading_set"/>
                                     <state key="highlighted" image="textReading_set_high"/>
+                                    <connections>
+                                        <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="2sT-QC-Vvy"/>
+                                    </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P63-Yv-dxN">
+                                <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P63-Yv-dxN" userLabel="light">
                                     <rect key="frame" x="94" y="0.0" width="93.5" height="70"/>
                                     <state key="normal" image="textReading_eyesight_normal"/>
                                     <state key="highlighted" image="textReading_eyesight_normal_high"/>
+                                    <connections>
+                                        <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qgr-jL-FWS"/>
+                                    </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-Td-9V1">
+                                <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-Td-9V1" userLabel="sound">
                                     <rect key="frame" x="187.5" y="0.0" width="94" height="70"/>
                                     <state key="normal" image="textReading_listening"/>
                                     <state key="highlighted" image="textReading_listening_high"/>
+                                    <connections>
+                                        <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="uAs-9Q-IsW"/>
+                                    </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qO6-ul-PgD">
+                                <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qO6-ul-PgD" userLabel="night">
                                     <rect key="frame" x="281.5" y="0.0" width="93.5" height="70"/>
                                     <state key="normal" image="textReading_night"/>
                                     <state key="highlighted" image="textReading_night_high"/>
+                                    <connections>
+                                        <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vup-XC-ELc"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

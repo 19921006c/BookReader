@@ -45,11 +45,14 @@
 {
     self.hidden = !self.hidden;
     [[BRCommonTool findNearsetViewController:self] setNeedsStatusBarAppearanceUpdate];
+    if (self.hidden) {
+        self.type = OperationDefault;
+    }
 }
 #pragma mark - private methods
 #pragma mark - getters and setters
 
-- (void)setType:(ReadBookOperationType *)type
+- (void)setType:(ReadBookOperationType )type
 {
     _type = type;
     
@@ -57,16 +60,15 @@
         [view removeFromSuperview];
     }
     
-    NSInteger tmpType = (NSInteger)type;
     if (type == OperationDefault) {//显示默认view
         [self addSubview:self.defaultView];
         return;
     }
-    if (tmpType == OperationSetting) {//显示设置view
+    if (type == OperationSetting) {//显示设置view
         [self addSubview:self.settingView];
         return;
     }
-    if (tmpType == OperationLight) {//显示亮度view
+    if (type == OperationLight) {//显示亮度view
         [self addSubview:self.lightView];
         return;
     }

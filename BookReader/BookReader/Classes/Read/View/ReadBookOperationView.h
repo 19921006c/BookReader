@@ -18,5 +18,5 @@ typedef NS_ENUM(NSUInteger, ReadBookOperationType) {
 + (instancetype)operationView;
 /** 传递点击时间, 点击ReadBookViewController 的view后传递过来 */
 - (void)didClick;
-@property (nonatomic, assign) ReadBookOperationType *type;
+@property (nonatomic) ReadBookOperationType type;
 @end
