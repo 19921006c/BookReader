@@ -26,6 +26,14 @@
 		D864584A1ECC570000FA4D7D /* BookReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D86458491ECC570000FA4D7D /* BookReaderUITests.m */; };
 		D86458601ECC573000FA4D7D /* 花间提壶方大厨.txt in Resources */ = {isa = PBXBuildFile; fileRef = D86458571ECC573000FA4D7D /* 花间提壶方大厨.txt */; };
 		D881EF021ECE9A85008A888F /* BRCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D881EF011ECE9A85008A888F /* BRCommonTool.m */; };
+		D881EF081ECEEA0B008A888F /* ReadBookOperationSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D881EF071ECEEA0B008A888F /* ReadBookOperationSettingView.m */; };
+		D881EF0B1ECEEA2F008A888F /* ReadBookOperationLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = D881EF0A1ECEEA2F008A888F /* ReadBookOperationLightView.m */; };
+		D881EF0E1ECEEA6E008A888F /* ReadBookOperationSoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = D881EF0D1ECEEA6E008A888F /* ReadBookOperationSoundView.m */; };
+		D881EF101ECEEA7E008A888F /* ReadBookOperationSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D881EF0F1ECEEA7E008A888F /* ReadBookOperationSettingView.xib */; };
+		D881EF121ECEEA85008A888F /* ReadBookOperationLightView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D881EF111ECEEA85008A888F /* ReadBookOperationLightView.xib */; };
+		D881EF141ECEEA94008A888F /* ReadBookOperationSoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D881EF131ECEEA94008A888F /* ReadBookOperationSoundView.xib */; };
+		D881EF171ECEEAD5008A888F /* ReadBookOperationDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = D881EF161ECEEAD5008A888F /* ReadBookOperationDefaultView.m */; };
+		D881EF191ECEEAE1008A888F /* ReadBookOperationDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D881EF181ECEEAE1008A888F /* ReadBookOperationDefaultView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +94,18 @@
 		D86458571ECC573000FA4D7D /* 花间提壶方大厨.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "花间提壶方大厨.txt"; sourceTree = "<group>"; };
 		D881EF001ECE9A85008A888F /* BRCommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRCommonTool.h; sourceTree = "<group>"; };
 		D881EF011ECE9A85008A888F /* BRCommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRCommonTool.m; sourceTree = "<group>"; };
+		D881EF061ECEEA0B008A888F /* ReadBookOperationSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookOperationSettingView.h; sourceTree = "<group>"; };
+		D881EF071ECEEA0B008A888F /* ReadBookOperationSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookOperationSettingView.m; sourceTree = "<group>"; };
+		D881EF091ECEEA2F008A888F /* ReadBookOperationLightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookOperationLightView.h; sourceTree = "<group>"; };
+		D881EF0A1ECEEA2F008A888F /* ReadBookOperationLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookOperationLightView.m; sourceTree = "<group>"; };
+		D881EF0C1ECEEA6E008A888F /* ReadBookOperationSoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookOperationSoundView.h; sourceTree = "<group>"; };
+		D881EF0D1ECEEA6E008A888F /* ReadBookOperationSoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookOperationSoundView.m; sourceTree = "<group>"; };
+		D881EF0F1ECEEA7E008A888F /* ReadBookOperationSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadBookOperationSettingView.xib; sourceTree = "<group>"; };
+		D881EF111ECEEA85008A888F /* ReadBookOperationLightView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadBookOperationLightView.xib; sourceTree = "<group>"; };
+		D881EF131ECEEA94008A888F /* ReadBookOperationSoundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadBookOperationSoundView.xib; sourceTree = "<group>"; };
+		D881EF151ECEEAD5008A888F /* ReadBookOperationDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookOperationDefaultView.h; sourceTree = "<group>"; };
+		D881EF161ECEEAD5008A888F /* ReadBookOperationDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookOperationDefaultView.m; sourceTree = "<group>"; };
+		D881EF181ECEEAE1008A888F /* ReadBookOperationDefaultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadBookOperationDefaultView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +221,18 @@
 				D848BFDD1ECD97DE0012AB3B /* ReadBookOperationView.h */,
 				D848BFDE1ECD97DE0012AB3B /* ReadBookOperationView.m */,
 				D848BFE01ECD98110012AB3B /* ReadBookOperationView.xib */,
+				D881EF151ECEEAD5008A888F /* ReadBookOperationDefaultView.h */,
+				D881EF161ECEEAD5008A888F /* ReadBookOperationDefaultView.m */,
+				D881EF181ECEEAE1008A888F /* ReadBookOperationDefaultView.xib */,
+				D881EF061ECEEA0B008A888F /* ReadBookOperationSettingView.h */,
+				D881EF071ECEEA0B008A888F /* ReadBookOperationSettingView.m */,
+				D881EF0F1ECEEA7E008A888F /* ReadBookOperationSettingView.xib */,
+				D881EF091ECEEA2F008A888F /* ReadBookOperationLightView.h */,
+				D881EF0A1ECEEA2F008A888F /* ReadBookOperationLightView.m */,
+				D881EF111ECEEA85008A888F /* ReadBookOperationLightView.xib */,
+				D881EF0C1ECEEA6E008A888F /* ReadBookOperationSoundView.h */,
+				D881EF0D1ECEEA6E008A888F /* ReadBookOperationSoundView.m */,
+				D881EF131ECEEA94008A888F /* ReadBookOperationSoundView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +443,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D86458601ECC573000FA4D7D /* 花间提壶方大厨.txt in Resources */,
+				D881EF101ECEEA7E008A888F /* ReadBookOperationSettingView.xib in Resources */,
+				D881EF191ECEEAE1008A888F /* ReadBookOperationDefaultView.xib in Resources */,
+				D881EF141ECEEA94008A888F /* ReadBookOperationSoundView.xib in Resources */,
+				D881EF121ECEEA85008A888F /* ReadBookOperationLightView.xib in Resources */,
 				D848BFE11ECD98110012AB3B /* ReadBookOperationView.xib in Resources */,
 				D86458341ECC570000FA4D7D /* LaunchScreen.storyboard in Resources */,
 				D86458311ECC570000FA4D7D /* Assets.xcassets in Resources */,
@@ -438,10 +474,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D881EF081ECEEA0B008A888F /* ReadBookOperationSettingView.m in Sources */,
 				D848BFC01ECD2D6A0012AB3B /* ReadBookViewController.m in Sources */,
 				D848BFBF1ECD2D6A0012AB3B /* ContentViewController.m in Sources */,
+				D881EF0E1ECEEA6E008A888F /* ReadBookOperationSoundView.m in Sources */,
 				D848BFD61ECD3B0F0012AB3B /* BRBookModel.m in Sources */,
 				D848BFC11ECD2D6A0012AB3B /* ContentView.m in Sources */,
+				D881EF0B1ECEEA2F008A888F /* ReadBookOperationLightView.m in Sources */,
 				D848BFD91ECD3BD50012AB3B /* BRPageModel.m in Sources */,
 				D848BFBE1ECD2D6A0012AB3B /* ViewController.m in Sources */,
 				D848BFDC1ECD7E8A0012AB3B /* BRPageViewController.m in Sources */,
@@ -451,6 +490,7 @@
 				D881EF021ECE9A85008A888F /* BRCommonTool.m in Sources */,
 				D86458291ECC570000FA4D7D /* AppDelegate.m in Sources */,
 				D86458261ECC570000FA4D7D /* main.m in Sources */,
+				D881EF171ECEEAD5008A888F /* ReadBookOperationDefaultView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,9 @@
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.view addSubview:self.operationView];
+    //添加一个点击手势,
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleClickEvent)];
+    tap.delegate = self;
     [self.view addGestureRecognizer:tap];
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -43,16 +45,31 @@
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
+//根据操作view的hidden属性来判断是否隐藏状态栏
 - (BOOL)prefersStatusBarHidden
 {
     return self.operationView.hidden;
 }
+// 设置状态栏为白色style
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }
 #pragma mark - delegate
-
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    //点击以下几种view才会触发点击事件
+    NSString *classStr = [NSString stringWithFormat:@"%@", [touch.view class]];
+    if ([classStr isEqualToString:@"ContentView"] ||
+        [classStr isEqualToString:@"ReadBookOperationView"] ||
+        [classStr isEqualToString:@"ReadBookOperationDefaultView"] ||
+        [classStr isEqualToString:@"ReadBookOperationSettingView"] ||
+        [classStr isEqualToString:@"ReadBookOperationLightView"] ||
+        [classStr isEqualToString:@"ReadBookOperationSoundView"]) {
+        return YES;
+    }
+    return NO;
+}
 #pragma mark - event response
 - (void)close {
     [self.navigationController popViewControllerAnimated:YES];
