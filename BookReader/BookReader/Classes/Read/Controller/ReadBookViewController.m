@@ -8,13 +8,12 @@
 
 #import "ReadBookViewController.h"
 #import "BRPageViewController.h"
+#import "ReadBookOperationView.h"
 @interface ReadBookViewController ()<UIGestureRecognizerDelegate>
 
 /** 每一页controller */
 @property (nonatomic, strong) BRPageViewController *pageViewController;
-/** 临时btn */
-@property (nonatomic, strong) UIButton *closeButton;
-
+@property (nonatomic, strong) ReadBookOperationView *operationView;
 @end
 
 @implementation ReadBookViewController
@@ -26,36 +25,31 @@
     
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
-    [self.view addSubview:self.closeButton];
-    [self.view addGestureRecognizer:({
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showOperationMenu)];
-        tap.delegate = self;
-        tap;
-    })];
+    [self.view addSubview:self.operationView];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleClickEvent)];
+    [self.view addGestureRecognizer:tap];
 }
-- (void)showOperationMenu
-{
-    
-    
-}
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    self.closeButton.frame = CGRectMake(0, kMainScreenHeight - 50, 50, 50);
     self.pageViewController.view.frame = self.view.bounds;
+    self.operationView.frame = self.view.bounds;
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+- (BOOL)prefersStatusBarHidden
+{
+    return self.operationView.hidden;
+}
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 #pragma mark - delegate
 
@@ -64,7 +58,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark - private methods
-
+- (void)singleClickEvent
+{
+    [self.operationView didClick];
+}
 #pragma mark - getters and setters
 - (BRPageViewController *)pageViewController
 {
@@ -74,19 +71,17 @@
     }
     return _pageViewController;
 }
-- (UIButton *)closeButton {
-    if (!_closeButton) {
-        _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_closeButton setTitle:@"clost" forState:UIControlStateNormal];
-        [_closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
-        [_closeButton setBackgroundColor:[UIColor blueColor]];
-    }
-    return _closeButton;
-}
 - (void)setModel:(BRBookModel *)model
 {
     _model = model;
     
     self.pageViewController.model = model;
+}
+- (ReadBookOperationView *)operationView
+{
+    if (!_operationView) {
+        _operationView = [ReadBookOperationView operationView];
+    }
+    return _operationView;
 }
 @end

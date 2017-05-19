@@ -8,6 +8,6 @@
 
 #ifndef HeaderFile_h
 #define HeaderFile_h
-
+#import "BRCommonTool.h"
 
 #endif /* HeaderFile_h */

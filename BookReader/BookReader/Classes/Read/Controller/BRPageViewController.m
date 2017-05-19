@@ -64,19 +64,15 @@
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     //Touch gestures below top bar should not make the page turn.
     //EDITED Check for only Tap here instead.
-    NSLog(@"number = %ld", gestureRecognizer.numberOfTouches);
     if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) {
         CGPoint touchPoint = [touch locationInView:self.view];
         if (touchPoint.y > 40) {
-            NSLog(@"NO");
             return NO;
         }
         else if (touchPoint.x > 50 && touchPoint.x < 430) {//Let the buttons in the middle of the top bar receive the touch
-            NSLog(@"NO");
             return NO;
         }
     }
-    NSLog(@"YES");
     return YES;
 }
 #pragma mark - event response

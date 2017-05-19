@@ -25,6 +25,7 @@
 		D864583F1ECC570000FA4D7D /* BookReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D864583E1ECC570000FA4D7D /* BookReaderTests.m */; };
 		D864584A1ECC570000FA4D7D /* BookReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D86458491ECC570000FA4D7D /* BookReaderUITests.m */; };
 		D86458601ECC573000FA4D7D /* 花间提壶方大厨.txt in Resources */ = {isa = PBXBuildFile; fileRef = D86458571ECC573000FA4D7D /* 花间提壶方大厨.txt */; };
+		D881EF021ECE9A85008A888F /* BRCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D881EF011ECE9A85008A888F /* BRCommonTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		D86458491ECC570000FA4D7D /* BookReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookReaderUITests.m; sourceTree = "<group>"; };
 		D864584B1ECC570000FA4D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86458571ECC573000FA4D7D /* 花间提壶方大厨.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "花间提壶方大厨.txt"; sourceTree = "<group>"; };
+		D881EF001ECE9A85008A888F /* BRCommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRCommonTool.h; sourceTree = "<group>"; };
+		D881EF011ECE9A85008A888F /* BRCommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRCommonTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 		D848BFB41ECD2D6A0012AB3B /* Read */ = {
 			isa = PBXGroup;
 			children = (
+				D881EEFF1ECE8AE3008A888F /* Tool */,
 				D848BFB51ECD2D6A0012AB3B /* Controller */,
 				D848BFBA1ECD2D6A0012AB3B /* Model */,
 				D848BFBB1ECD2D6A0012AB3B /* View */,
@@ -214,6 +218,8 @@
 				D848BFC41ECD2EE70012AB3B /* PrefixHeader.pch */,
 				D848BFC51ECD2F280012AB3B /* HeaderFile.h */,
 				D848BFC61ECD2F980012AB3B /* DefineFile.h */,
+				D881EF001ECE9A85008A888F /* BRCommonTool.h */,
+				D881EF011ECE9A85008A888F /* BRCommonTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -288,6 +294,13 @@
 				D864584B1ECC570000FA4D7D /* Info.plist */,
 			);
 			path = BookReaderUITests;
+			sourceTree = "<group>";
+		};
+		D881EEFF1ECE8AE3008A888F /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +448,7 @@
 				D848BFD31ECD32F50012AB3B /* BRMainTabBarController.m in Sources */,
 				D848BFD01ECD31A40012AB3B /* BRMainNavigationController.m in Sources */,
 				D848BFDF1ECD97DE0012AB3B /* ReadBookOperationView.m in Sources */,
+				D881EF021ECE9A85008A888F /* BRCommonTool.m in Sources */,
 				D86458291ECC570000FA4D7D /* AppDelegate.m in Sources */,
 				D86458261ECC570000FA4D7D /* main.m in Sources */,
 			);

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ReadBookOperationView : UIView
-
++ (instancetype)operationView;
+/** 传递点击时间, 点击ReadBookViewController 的view后传递过来 */
+- (void)didClick;
 @end
