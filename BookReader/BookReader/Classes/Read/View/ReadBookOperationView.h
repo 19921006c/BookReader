@@ -14,9 +14,12 @@ typedef NS_ENUM(NSUInteger, ReadBookOperationType) {
     OperationLight,
     OperationSound,
 };
+
+@class BRBookModel;
 @interface ReadBookOperationView : UIView
 + (instancetype)operationView;
 /** 传递点击时间, 点击ReadBookViewController 的view后传递过来 */
 - (void)didClick;
 @property (nonatomic) ReadBookOperationType type;
+@property (nonatomic, strong) BRBookModel *model;
 @end

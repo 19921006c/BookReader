@@ -5,7 +5,9 @@
 //  Created by joe on 2017/5/17.
 //  Copyright © 2017年 joe. All rights reserved.
 //
-
+#define kAppLightKey @"kAppLightKey"
+#define kChangeBrightnessValue @"kChangeBrightnessValue"
+#define kReadBookViewController
 #import "ReadBookViewController.h"
 #import "BRPageViewController.h"
 #import "ReadBookOperationView.h"
@@ -13,7 +15,10 @@
 
 /** 每一页controller */
 @property (nonatomic, strong) BRPageViewController *pageViewController;
+/** 操作view(返回, 搜索, 设置等button界面) */
 @property (nonatomic, strong) ReadBookOperationView *operationView;
+/** 调节亮度Layer */
+@property (nonatomic, strong) CALayer *brightnessLayer;
 @end
 
 @implementation ReadBookViewController
@@ -26,6 +31,9 @@
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.view addSubview:self.operationView];
+    [self.view.layer addSublayer:self.brightnessLayer];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(brightnessChange:) name:kChangeBrightnessValue object:nil];
+   
     //添加一个点击手势,
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleClickEvent)];
     tap.delegate = self;
@@ -38,6 +46,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     self.pageViewController.view.frame = self.view.bounds;
     self.operationView.frame = self.view.bounds;
+    self.brightnessLayer.frame = self.view.bounds;
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -54,6 +63,10 @@
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 #pragma mark - delegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
@@ -74,6 +87,12 @@
 - (void)close {
     [self.navigationController popViewControllerAnimated:YES];
 }
+/** 调节亮度通知 */
+- (void)brightnessChange:(NSNotification *)notification
+{
+    CGFloat value = [notification.userInfo[@"value"] floatValue];
+    self.brightnessLayer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:value].CGColor;
+}
 #pragma mark - private methods
 - (void)singleClickEvent
 {
@@ -93,6 +112,7 @@
     _model = model;
     
     self.pageViewController.model = model;
+    self.operationView.model = model;
 }
 - (ReadBookOperationView *)operationView
 {
@@ -100,5 +120,16 @@
         _operationView = [ReadBookOperationView operationView];
     }
     return _operationView;
+}
+- (CALayer *)brightnessLayer
+{
+    if (!_brightnessLayer) {
+        if (!_brightnessLayer) {
+            _brightnessLayer = [[CALayer alloc] init];
+            CGFloat appLight = [[NSUserDefaults standardUserDefaults] floatForKey:kAppLightKey];
+            _brightnessLayer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:appLight].CGColor;
+        }
+    }
+    return _brightnessLayer;
 }
 @end

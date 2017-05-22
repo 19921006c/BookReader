@@ -9,5 +9,6 @@
 #ifndef HeaderFile_h
 #define HeaderFile_h
 #import "BRCommonTool.h"
+#import "UIColor+Extension.h"
 
 #endif /* HeaderFile_h */

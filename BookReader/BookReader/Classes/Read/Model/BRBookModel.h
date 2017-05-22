@@ -14,5 +14,7 @@
 @property (nonatomic, copy) NSString *content;
 /** 每一页的pageModel数组 */
 @property (nonatomic, strong) NSMutableArray *pageModelArray;
+/** 读书进度记录 */
+@property (nonatomic, assign) NSUInteger recordPageNum;
 
 @end

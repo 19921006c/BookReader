@@ -25,6 +25,7 @@
 		D864583F1ECC570000FA4D7D /* BookReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D864583E1ECC570000FA4D7D /* BookReaderTests.m */; };
 		D864584A1ECC570000FA4D7D /* BookReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D86458491ECC570000FA4D7D /* BookReaderUITests.m */; };
 		D86458601ECC573000FA4D7D /* 花间提壶方大厨.txt in Resources */ = {isa = PBXBuildFile; fileRef = D86458571ECC573000FA4D7D /* 花间提壶方大厨.txt */; };
+		D87DB2A41ED2858000C19E7A /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D87DB2A31ED2858000C19E7A /* UIColor+Extension.m */; };
 		D881EF021ECE9A85008A888F /* BRCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D881EF011ECE9A85008A888F /* BRCommonTool.m */; };
 		D881EF081ECEEA0B008A888F /* ReadBookOperationSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D881EF071ECEEA0B008A888F /* ReadBookOperationSettingView.m */; };
 		D881EF0B1ECEEA2F008A888F /* ReadBookOperationLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = D881EF0A1ECEEA2F008A888F /* ReadBookOperationLightView.m */; };
@@ -92,6 +93,8 @@
 		D86458491ECC570000FA4D7D /* BookReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookReaderUITests.m; sourceTree = "<group>"; };
 		D864584B1ECC570000FA4D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86458571ECC573000FA4D7D /* 花间提壶方大厨.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "花间提壶方大厨.txt"; sourceTree = "<group>"; };
+		D87DB2A21ED2858000C19E7A /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		D87DB2A31ED2858000C19E7A /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		D881EF001ECE9A85008A888F /* BRCommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRCommonTool.h; sourceTree = "<group>"; };
 		D881EF011ECE9A85008A888F /* BRCommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRCommonTool.m; sourceTree = "<group>"; };
 		D881EF061ECEEA0B008A888F /* ReadBookOperationSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookOperationSettingView.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 		D848BFC21ECD2EDA0012AB3B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D87DB2A21ED2858000C19E7A /* UIColor+Extension.h */,
+				D87DB2A31ED2858000C19E7A /* UIColor+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				TargetAttributes = {
 					D86458201ECC570000FA4D7D = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = GA2HZ4U725;
 						ProvisioningStyle = Automatic;
 					};
 					D86458391ECC570000FA4D7D = {
@@ -487,6 +493,7 @@
 				D848BFD31ECD32F50012AB3B /* BRMainTabBarController.m in Sources */,
 				D848BFD01ECD31A40012AB3B /* BRMainNavigationController.m in Sources */,
 				D848BFDF1ECD97DE0012AB3B /* ReadBookOperationView.m in Sources */,
+				D87DB2A41ED2858000C19E7A /* UIColor+Extension.m in Sources */,
 				D881EF021ECE9A85008A888F /* BRCommonTool.m in Sources */,
 				D86458291ECC570000FA4D7D /* AppDelegate.m in Sources */,
 				D86458261ECC570000FA4D7D /* main.m in Sources */,
@@ -629,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GA2HZ4U725;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/joe/Documents/CodeLib/BookReader/BookReader/BookReader/Classes/Tool/PrefixHeader.pch;
 				INFOPLIST_FILE = BookReader/Info.plist;
@@ -642,6 +650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GA2HZ4U725;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/joe/Documents/CodeLib/BookReader/BookReader/BookReader/Classes/Tool/PrefixHeader.pch;
 				INFOPLIST_FILE = BookReader/Info.plist;

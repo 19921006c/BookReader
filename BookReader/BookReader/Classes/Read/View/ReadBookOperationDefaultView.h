@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class BRBookModel;
 @interface ReadBookOperationDefaultView : UIView
+
 + (instancetype)defaultView;
+@property (nonatomic, strong) BRBookModel *model;
+
 @end

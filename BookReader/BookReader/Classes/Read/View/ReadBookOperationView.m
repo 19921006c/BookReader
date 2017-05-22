@@ -38,9 +38,6 @@
 }
 #pragma mark - delegate
 #pragma mark - event response
-- (IBAction)backBtnAction:(id)sender {
-    [[BRCommonTool findNearsetViewController:self].navigationController popViewControllerAnimated:YES];
-}
 - (void)didClick
 {
     self.hidden = !self.hidden;
@@ -51,6 +48,12 @@
 }
 #pragma mark - private methods
 #pragma mark - getters and setters
+- (void)setModel:(BRBookModel *)model
+{
+    _model = model;
+    
+    self.defaultView.model = model;
+}
 
 - (void)setType:(ReadBookOperationType )type
 {

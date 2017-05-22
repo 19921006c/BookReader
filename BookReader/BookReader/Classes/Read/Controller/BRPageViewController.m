@@ -45,6 +45,7 @@
     // 返回的ViewController，将被添加到相应的UIPageViewController对象上。
     // UIPageViewController对象会根据UIPageViewControllerDataSource协议方法,自动来维护次序
     // 不用我们去操心每个ViewController的顺序问题
+    self.model.recordPageNum = index;
     return [self viewControllerWithIndex:index];
 }
 
@@ -59,6 +60,7 @@
     if (index == [self.model.pageModelArray count]) {
         return nil;
     }
+    self.model.recordPageNum = index;
     return [self viewControllerWithIndex:index];
 }
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
