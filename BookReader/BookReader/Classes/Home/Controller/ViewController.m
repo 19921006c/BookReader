@@ -46,13 +46,11 @@ static NSString *const identifier = @"HomeTableViewCellIdentifier";
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BRBookModel *model = [[BRBookModel alloc] init];
+    BRBookModel *model = [BRReadBookTool getModelWithFileName:@"花间提壶方大厨.txt"];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"花间提壶方大厨.txt" ofType:nil];
-    NSString *content = [NSString stringWithContentsOfFile:path encoding:0x80000632 error:nil];
-    model.content = content;
     ReadBookViewController *vc = [[ReadBookViewController alloc] init];
     vc.model = model;
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 

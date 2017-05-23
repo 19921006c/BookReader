@@ -11,7 +11,24 @@
 #import <UIKit/UIKit.h>
 #import "BRPageModel.h"
 @implementation BRBookModel
-
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init]) {
+        self.title = [aDecoder decodeObjectForKey:@"title"];
+        self.content = [aDecoder decodeObjectForKey:@"content"];
+        self.pageModelArray = [aDecoder decodeObjectForKey:@"pageModelArray"];
+        self.recordPageNum = [aDecoder decodeIntegerForKey:@"recordPageNum"];
+    }
+    
+    return self;
+}
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.title forKey:@"title"];
+    [aCoder encodeObject:self.content forKey:@"content"];
+    [aCoder encodeObject:self.pageModelArray forKey:@"pageModelArray"];
+    [aCoder encodeInteger:self.recordPageNum forKey:@"recordPageNum"];
+}
 - (void)setContent:(NSString *)content
 {
     _content = content;
@@ -58,4 +75,10 @@
     return _pageModelArray;
 }
 
+- (void)setRecordPageNum:(NSUInteger)recordPageNum
+{
+    _recordPageNum = recordPageNum;
+    
+    [BRReadBookTool saveDataWithModel:self];
+}
 @end

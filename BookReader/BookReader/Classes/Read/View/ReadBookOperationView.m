@@ -42,7 +42,7 @@
 {
     self.hidden = !self.hidden;
     [[BRCommonTool findNearsetViewController:self] setNeedsStatusBarAppearanceUpdate];
-    if (self.hidden) {
+    if (!self.hidden) {
         self.type = OperationDefault;
     }
 }
@@ -65,6 +65,7 @@
     
     if (type == OperationDefault) {//显示默认view
         [self addSubview:self.defaultView];
+        self.defaultView.model = self.model;
         return;
     }
     if (type == OperationSetting) {//显示设置view

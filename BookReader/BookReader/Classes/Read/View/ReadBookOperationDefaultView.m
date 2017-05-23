@@ -5,6 +5,8 @@
 //  Created by joe on 2017/5/19.
 //  Copyright © 2017年 joe. All rights reserved.
 //
+/** 操作默认页通知PageViewController翻到指定页 */
+#define kOperationDefaultViewNTPageViewControllerPage @"kOperationDefaultViewNTPageViewControllerPage"
 
 #import "ReadBookOperationDefaultView.h"
 #import "ReadBookOperationView.h"
@@ -30,18 +32,19 @@
     self.slider.minimumValue = 0;
     self.slider.maximumValue = 100;
     [self.slider addTarget:self action:@selector(changeProcessRateValue:) forControlEvents:UIControlEventValueChanged];
-    [self.model addObserver:self forKeyPath:@"BRBookModel" options:NSKeyValueObservingOptionNew context:nil];
+    [self.slider addTarget:self action:@selector(scrollEnd:) forControlEvents:UIControlEventTouchUpInside];
+    [self.model addObserver:self forKeyPath:@"recordPageNum" options:NSKeyValueObservingOptionNew context:nil];
 }
-
+- (void)scrollEnd:(UISlider *)slider
+{
+    NSUInteger pageNum = self.model.pageModelArray.count * slider.value * 0.01;
+    
+    NSDictionary *dic = @{@"pageNum" : [NSString stringWithFormat:@"%ld", pageNum]};
+    [[NSNotificationCenter defaultCenter] postNotificationName:kOperationDefaultViewNTPageViewControllerPage object:nil userInfo:dic];
+}
 - (void)changeProcessRateValue:(UISlider *)slider
 {
     self.processRateLabel.text = [NSString stringWithFormat:@"%.2f%%", slider.value];
-}
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
-{
-    if ([keyPath isEqualToString:@"BRBookModel"]) {
-        NSLog(@"num = %ld", self.model.recordPageNum);
-    }
 }
 
 - (IBAction)btnAction:(UIButton *)sender {
@@ -80,8 +83,9 @@
 {
     _model = model;
     
-    CGFloat rate = (CGFloat)model.recordPageNum / model.pageModelArray.count;
+    CGFloat rate = (CGFloat)model.recordPageNum / (model.pageModelArray.count - 1) * 100;
     [self.slider setValue:rate];
     self.processRateLabel.text = [NSString stringWithFormat:@"%.2f%%", rate];
+    self.titleLabel.text = model.title;
 }
 @end

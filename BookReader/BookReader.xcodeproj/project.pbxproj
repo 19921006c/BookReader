@@ -18,6 +18,7 @@
 		D848BFDC1ECD7E8A0012AB3B /* BRPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFDB1ECD7E8A0012AB3B /* BRPageViewController.m */; };
 		D848BFDF1ECD97DE0012AB3B /* ReadBookOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFDE1ECD97DE0012AB3B /* ReadBookOperationView.m */; };
 		D848BFE11ECD98110012AB3B /* ReadBookOperationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D848BFE01ECD98110012AB3B /* ReadBookOperationView.xib */; };
+		D86371061ED4213F009ED7BF /* BRReadBookTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D86371051ED4213F009ED7BF /* BRReadBookTool.m */; };
 		D86458261ECC570000FA4D7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D86458251ECC570000FA4D7D /* main.m */; };
 		D86458291ECC570000FA4D7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D86458281ECC570000FA4D7D /* AppDelegate.m */; };
 		D86458311ECC570000FA4D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86458301ECC570000FA4D7D /* Assets.xcassets */; };
@@ -79,6 +80,8 @@
 		D848BFDD1ECD97DE0012AB3B /* ReadBookOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookOperationView.h; sourceTree = "<group>"; };
 		D848BFDE1ECD97DE0012AB3B /* ReadBookOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookOperationView.m; sourceTree = "<group>"; };
 		D848BFE01ECD98110012AB3B /* ReadBookOperationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadBookOperationView.xib; sourceTree = "<group>"; };
+		D86371041ED4213F009ED7BF /* BRReadBookTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRReadBookTool.h; sourceTree = "<group>"; };
+		D86371051ED4213F009ED7BF /* BRReadBookTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRReadBookTool.m; sourceTree = "<group>"; };
 		D86458211ECC570000FA4D7D /* BookReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86458251ECC570000FA4D7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D86458271ECC570000FA4D7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -336,6 +339,8 @@
 		D881EEFF1ECE8AE3008A888F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				D86371041ED4213F009ED7BF /* BRReadBookTool.h */,
+				D86371051ED4213F009ED7BF /* BRReadBookTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				D848BFD61ECD3B0F0012AB3B /* BRBookModel.m in Sources */,
 				D848BFC11ECD2D6A0012AB3B /* ContentView.m in Sources */,
 				D881EF0B1ECEEA2F008A888F /* ReadBookOperationLightView.m in Sources */,
+				D86371061ED4213F009ED7BF /* BRReadBookTool.m in Sources */,
 				D848BFD91ECD3BD50012AB3B /* BRPageModel.m in Sources */,
 				D848BFBE1ECD2D6A0012AB3B /* ViewController.m in Sources */,
 				D848BFDC1ECD7E8A0012AB3B /* BRPageViewController.m in Sources */,

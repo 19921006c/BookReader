@@ -10,5 +10,6 @@
 #define HeaderFile_h
 #import "BRCommonTool.h"
 #import "UIColor+Extension.h"
+#import "BRReadBookTool.h"
 
 #endif /* HeaderFile_h */

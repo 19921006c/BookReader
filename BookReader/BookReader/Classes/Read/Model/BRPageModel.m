@@ -9,5 +9,15 @@
 #import "BRPageModel.h"
 
 @implementation BRPageModel
-
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init]) {
+        self.content = [aDecoder decodeObjectForKey:@"content"];
+    }
+    return self;
+}
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.content forKey:@"content"];
+}
 @end

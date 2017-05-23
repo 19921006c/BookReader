@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BRBookModel : NSObject
+@interface BRBookModel : NSObject<NSCoding>
 
+/** 书名 */
+@property (nonatomic, copy) NSString *title;
 /** 整本书的内容 */
 @property (nonatomic, copy) NSString *content;
 /** 每一页的pageModel数组 */

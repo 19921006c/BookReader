@@ -5,6 +5,7 @@
 //  Created by joe on 2017/5/18.
 //  Copyright © 2017年 joe. All rights reserved.
 //
+#define kOperationDefaultViewNTPageViewControllerPage @"kOperationDefaultViewNTPageViewControllerPage"
 
 #import "BRPageViewController.h"
 #import "ContentViewController.h"
@@ -26,13 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //拿到第一页
-    ContentViewController *vc = [self viewControllerWithIndex:0];
-    NSArray *vcs = [NSArray arrayWithObject:vc];
-    [self setViewControllers:vcs direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
     for (UIGestureRecognizer *ges in self.view.gestureRecognizers) {
         ges.delegate = self;
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageToIndex:) name:kOperationDefaultViewNTPageViewControllerPage object:nil];
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 #pragma mark - delegate
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
@@ -45,7 +48,9 @@
     // 返回的ViewController，将被添加到相应的UIPageViewController对象上。
     // UIPageViewController对象会根据UIPageViewControllerDataSource协议方法,自动来维护次序
     // 不用我们去操心每个ViewController的顺序问题
+    // 改变model读书记录
     self.model.recordPageNum = index;
+    // 将model缓存
     return [self viewControllerWithIndex:index];
 }
 
@@ -60,7 +65,10 @@
     if (index == [self.model.pageModelArray count]) {
         return nil;
     }
+    //改变model总的读书记录
     self.model.recordPageNum = index;
+    //将model缓存
+    
     return [self viewControllerWithIndex:index];
 }
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
@@ -92,9 +100,29 @@
 - (NSUInteger)indexWithViewController:(ContentViewController *)viewController {
     return [self.model.pageModelArray indexOfObject:viewController.model];
 }
+/** 通知回调 */
+- (void)pageToIndex:(NSNotification *)notification
+{
+    NSInteger tmpIndex = [notification.userInfo[@"pageNum"] integerValue];
+    NSUInteger index = tmpIndex == 0 ? 0 : tmpIndex - 1;
+    ContentViewController *vc = [self viewControllerWithIndex:index];
+    
+    NSArray *vcs = [NSArray arrayWithObject:vc];
+    [self setViewControllers:vcs direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+    self.model.recordPageNum = index;
+}
 #pragma mark - getters and setters
 
-
+- (void)setModel:(BRBookModel *)model
+{
+    _model = model;
+    
+    //展示页面
+    
+    ContentViewController *vc = [self viewControllerWithIndex:model.recordPageNum];
+    NSArray *vcs = [NSArray arrayWithObject:vc];
+    [self setViewControllers:vcs direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+}
 
 
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BRPageModel : NSObject
+@interface BRPageModel : NSObject<NSCoding>
 /** 当前页内容 */
 @property (nonatomic, copy) NSString *content;
 @end
