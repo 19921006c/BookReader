@@ -6,6 +6,7 @@
 //  Copyright © 2017年 joe. All rights reserved.
 //
 #define kOperationDefaultViewNTPageViewControllerPage @"kOperationDefaultViewNTPageViewControllerPage"
+#define kBRSearchMainViewNFKey @"kBRSearchMainViewNFKey"
 
 #import "BRPageViewController.h"
 #import "ContentViewController.h"
@@ -31,7 +32,10 @@
         ges.delegate = self;
     }
     
+    /** 滑动进度条的通知 */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageToIndex:) name:kOperationDefaultViewNTPageViewControllerPage object:nil];
+    /** 点击搜索结果cell的通知 */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(searchResult:) name:kBRSearchMainViewNFKey object:nil];
 }
 - (void)dealloc
 {
@@ -100,16 +104,28 @@
 - (NSUInteger)indexWithViewController:(ContentViewController *)viewController {
     return [self.model.pageModelArray indexOfObject:viewController.model];
 }
-/** 通知回调 */
-- (void)pageToIndex:(NSNotification *)notification
+/** 通过下标跳转相应的页面 */
+- (void)pushToPage:(NSUInteger)index
 {
-    NSInteger tmpIndex = [notification.userInfo[@"pageNum"] integerValue];
-    NSUInteger index = tmpIndex == 0 ? 0 : tmpIndex - 1;
     ContentViewController *vc = [self viewControllerWithIndex:index];
     
     NSArray *vcs = [NSArray arrayWithObject:vc];
     [self setViewControllers:vcs direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
     self.model.recordPageNum = index;
+}
+/** 通知回调 */
+- (void)pageToIndex:(NSNotification *)notification
+{
+    NSInteger tmpIndex = [notification.userInfo[@"pageNum"] integerValue];
+    NSUInteger index = tmpIndex == 0 ? 0 : tmpIndex - 1;
+    [self pushToPage:index];
+}
+/** 点击搜索结果cell的通知 */
+- (void)searchResult:(NSNotification *)notification
+{
+    NSUInteger index = [notification.userInfo[@"pageNum"] integerValue];
+    
+    [self pushToPage:index];
 }
 #pragma mark - getters and setters
 
@@ -119,9 +135,7 @@
     
     //展示页面
     
-    ContentViewController *vc = [self viewControllerWithIndex:model.recordPageNum];
-    NSArray *vcs = [NSArray arrayWithObject:vc];
-    [self setViewControllers:vcs direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+    [self pushToPage:model.recordPageNum];
 }
 
 

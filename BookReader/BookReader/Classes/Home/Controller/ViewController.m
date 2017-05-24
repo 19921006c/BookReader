@@ -46,8 +46,9 @@ static NSString *const identifier = @"HomeTableViewCellIdentifier";
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BRBookModel *model = [BRReadBookTool getModelWithFileName:@"花间提壶方大厨.txt"];
-    
+    BRBookModel *model = [BRReadBookTool getModelWithFileName:self.dataSourceArray[indexPath.row]];
+    /** model为空则return掉 */
+    if (!model) return;
     ReadBookViewController *vc = [[ReadBookViewController alloc] init];
     vc.model = model;
     
@@ -67,7 +68,7 @@ static NSString *const identifier = @"HomeTableViewCellIdentifier";
 }
 - (NSArray *)dataSourceArray {
     if (!_dataSourceArray) {
-        _dataSourceArray = [NSArray arrayWithObject:@"花间提壶方大厨.txt"];
+        _dataSourceArray = [BRReadBookTool getTotalBookList];
     }
     return _dataSourceArray;
 }

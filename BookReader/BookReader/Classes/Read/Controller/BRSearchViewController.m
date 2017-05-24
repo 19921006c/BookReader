@@ -7,31 +7,42 @@
 //
 
 #import "BRSearchViewController.h"
-
+#import "BRSearchMainView.h"
 @interface BRSearchViewController ()
-
+@property (nonatomic, strong) BRSearchMainView *searchView;
 @end
 
 @implementation BRSearchViewController
-
+#pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.view addSubview:self.searchView];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.searchView.frame = self.view.bounds;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - delegate
+#pragma mark - event response
+#pragma mark - private methods
+#pragma mark - getters and setters
+- (BRSearchMainView *)searchView
+{
+    if (!_searchView) {
+        _searchView = [[[NSBundle mainBundle] loadNibNamed:@"BRSearchMainView" owner:self options:nil] lastObject];
+    }
+    return _searchView;
 }
-*/
-
+- (void)setModel:(BRBookModel *)model
+{
+    _model = model;
+    
+    self.searchView.model = model;
+}
 @end

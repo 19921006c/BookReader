@@ -9,7 +9,12 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "BRMainTabBarController.h"
-@interface AppDelegate ()
+#import "HTTPServer.h"
+#import "MyHTTPConnection.h"
+#import "BRIPHelper.h"
+@interface AppDelegate () {
+    HTTPServer *httpServer;
+}
 
 @end
 
@@ -30,6 +35,39 @@
     
     self.window = window;
     
+    
+//    httpServer = [[HTTPServer alloc] init];
+//    [httpServer setType:@"_http._tcp."];
+//     [httpServer setPort:12345];
+    NSString * webLocalPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Web"];
+//    [httpServer setDocumentRoot:webLocalPath];
+//    
+//    NSLog(@"Setting document root: %@", webLocalPath);
+//    
+//    NSError * error;
+//    if([httpServer start:&error])
+//    {
+//        NSLog(@"start server success in port %d %@",[httpServer listeningPort],[httpServer publishedName]);
+//        
+//    }
+//    else
+//    {
+//        NSLog(@"启动失败");
+//    }
+    httpServer = [[HTTPServer alloc] init];
+    [httpServer setType:@"_http._tcp."];
+    // webPath是server搜寻HTML等文件的路径
+    [httpServer setDocumentRoot:webLocalPath];
+    [httpServer setConnectionClass:[MyHTTPConnection class]];
+    NSError *err;
+    if ([httpServer start:&err]) {
+        NSLog(@"port %hu",[httpServer listeningPort]);
+    }else{
+        NSLog(@"%@",err);
+    }
+    
+    NSString *ip = [BRIPHelper deviceIPAdress];
+    NSLog(@"ipipip = %@", ip);
     return YES;
 }
 

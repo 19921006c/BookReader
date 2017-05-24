@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class BRBookModel;
 @interface BRSearchViewController : UIViewController
-
+@property (nonatomic, strong) BRBookModel *model;
 @end

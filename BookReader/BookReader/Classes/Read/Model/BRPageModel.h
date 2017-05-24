@@ -11,4 +11,6 @@
 @interface BRPageModel : NSObject<NSCoding>
 /** 当前页内容 */
 @property (nonatomic, copy) NSString *content;
+/** 当前页数 */
+@property (nonatomic, assign) NSUInteger index;
 @end

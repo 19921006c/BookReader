@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface BRSearchModel : NSObject
-
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic, assign) NSUInteger index;
 @end

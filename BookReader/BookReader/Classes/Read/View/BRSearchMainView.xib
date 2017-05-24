@@ -1,16 +1,70 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BRSearchMainView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8N1-Yi-zAX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入一个关键字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEm-Ze-JN3">
+                            <rect key="frame" x="20" y="25" width="275" height="34"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r34-PS-Gmd">
+                            <rect key="frame" x="295" y="25.5" width="80" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="VWx-1S-qji"/>
+                            </constraints>
+                            <state key="normal" title="取消"/>
+                            <connections>
+                                <action selector="btnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="1rK-VH-IXb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="r34-PS-Gmd" firstAttribute="leading" secondItem="YEm-Ze-JN3" secondAttribute="trailing" id="E1H-Mh-hLs"/>
+                        <constraint firstItem="r34-PS-Gmd" firstAttribute="centerY" secondItem="YEm-Ze-JN3" secondAttribute="centerY" id="F4N-Ym-Kzv"/>
+                        <constraint firstAttribute="height" constant="64" id="QLx-hA-Rr5"/>
+                        <constraint firstItem="YEm-Ze-JN3" firstAttribute="top" secondItem="8N1-Yi-zAX" secondAttribute="top" constant="25" id="VQI-EG-u52"/>
+                        <constraint firstAttribute="trailing" secondItem="r34-PS-Gmd" secondAttribute="trailing" id="h18-bj-6bF"/>
+                        <constraint firstAttribute="bottom" secondItem="YEm-Ze-JN3" secondAttribute="bottom" constant="5" id="k3D-ec-Q7l"/>
+                        <constraint firstItem="YEm-Ze-JN3" firstAttribute="leading" secondItem="8N1-Yi-zAX" secondAttribute="leading" constant="20" id="t2C-Be-QTh"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YqR-3Z-7Pn">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8N1-Yi-zAX" secondAttribute="trailing" id="GZC-V3-lPH"/>
+                <constraint firstAttribute="trailing" secondItem="YqR-3Z-7Pn" secondAttribute="trailing" id="N1q-6m-6h8"/>
+                <constraint firstAttribute="bottom" secondItem="YqR-3Z-7Pn" secondAttribute="bottom" id="U03-te-clB"/>
+                <constraint firstItem="YqR-3Z-7Pn" firstAttribute="top" secondItem="8N1-Yi-zAX" secondAttribute="bottom" id="fiI-hZ-rF7"/>
+                <constraint firstItem="YqR-3Z-7Pn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hIv-Rl-zkk"/>
+                <constraint firstItem="8N1-Yi-zAX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sCe-v7-EQd"/>
+                <constraint firstItem="8N1-Yi-zAX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zXP-Ca-qNm"/>
+            </constraints>
+            <connections>
+                <outlet property="tableView" destination="YqR-3Z-7Pn" id="6zT-Ky-Hb1"/>
+                <outlet property="textField" destination="YEm-Ze-JN3" id="Hn7-gJ-ZL0"/>
+            </connections>
         </view>
     </objects>
 </document>

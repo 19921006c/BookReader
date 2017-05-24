@@ -148,7 +148,8 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 		// an empty form sent. we won't handle it.
 		return;
 	}    
-	NSString* uploadDirPath = [[config documentRoot] stringByAppendingPathComponent:@"upload"];
+//	NSString* uploadDirPath = [[config documentRoot] stringByAppendingPathComponent:@"upload"];
+    NSString *uploadDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 
 	BOOL isDir = YES;
 	if (![[NSFileManager defaultManager]fileExistsAtPath:uploadDirPath isDirectory:&isDir ]) {

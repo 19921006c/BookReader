@@ -13,11 +13,13 @@
 {
     if (self = [super init]) {
         self.content = [aDecoder decodeObjectForKey:@"content"];
+        self.index = [aDecoder decodeIntegerForKey:@"index"];
     }
     return self;
 }
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.content forKey:@"content"];
+    [aCoder encodeInteger:self.index forKey:@"index"];
 }
 @end

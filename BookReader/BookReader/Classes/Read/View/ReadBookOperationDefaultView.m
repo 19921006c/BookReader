@@ -11,6 +11,7 @@
 #import "ReadBookOperationDefaultView.h"
 #import "ReadBookOperationView.h"
 #import "BRBookModel.h"
+#import "BRSearchViewController.h"
 @interface ReadBookOperationDefaultView()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *processRateLabel;
@@ -56,6 +57,9 @@
         return;
     }
     if (tag == 1002) {//搜索
+        BRSearchViewController *vc = [[BRSearchViewController alloc] init];
+        vc.model = self.model;
+        [[BRCommonTool findNearsetViewController:self].navigationController pushViewController:vc animated:YES];
         return;
     }
     if (tag == 1003) {//设置

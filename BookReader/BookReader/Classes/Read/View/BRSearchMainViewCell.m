@@ -7,18 +7,29 @@
 //
 
 #import "BRSearchMainViewCell.h"
+#import "BRSearchModel.h"
+@interface BRSearchMainViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
+@end
 @implementation BRSearchMainViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+static NSString *const identifier = @"BRSearchMainViewCell";
++ (instancetype)cellWithTableView:(UITableView *)tableView
+{
+    BRSearchMainViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil] lastObject];
+    }
+    return cell;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+- (void)setModel:(BRSearchModel *)model
+{
+    _model = model;
+    
+    self.label.text = model.content;
 }
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BRSearchMainViewHeader : UIView
-
++ (instancetype)header;
+@property (nonatomic, strong) NSArray *array;
 @end

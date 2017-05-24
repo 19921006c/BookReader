@@ -81,6 +81,10 @@
         [classStr isEqualToString:@"ReadBookOperationSoundView"]) {
         return YES;
     }
+    /** 点击搜索按钮 */
+    if (touch.view.tag == 1002) {
+        [self.operationView didClick];
+    }
     return NO;
 }
 #pragma mark - event response

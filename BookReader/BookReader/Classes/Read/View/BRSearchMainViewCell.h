@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class BRSearchModel;
 @interface BRSearchMainViewCell : UITableViewCell
+
++ (instancetype)cellWithTableView:(UITableView *)tableView;
+@property (nonatomic, strong) BRSearchModel *model;
 
 @end

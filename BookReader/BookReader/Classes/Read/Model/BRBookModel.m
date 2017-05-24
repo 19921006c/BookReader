@@ -57,6 +57,7 @@
         
         BRPageModel *model = [[BRPageModel alloc] init];
         model.content = [content substringWithRange:NSMakeRange(tmpRange.location, tmpRange.length)];
+        model.index = self.pageModelArray.count;
         [self.pageModelArray addObject:model];
         
         if (tmpFrame) CFRelease(tmpFrame);
@@ -79,6 +80,7 @@
 {
     _recordPageNum = recordPageNum;
     
+    //每次翻页时, 将数据缓存
     [BRReadBookTool saveDataWithModel:self];
 }
 @end

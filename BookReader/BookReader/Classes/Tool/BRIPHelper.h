@@ -10,4 +10,8 @@
 
 @interface BRIPHelper : NSObject
 
+/*!
+ * get device ip address
+ */
++ (NSString *)deviceIPAdress;
 @end

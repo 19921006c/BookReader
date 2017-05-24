@@ -16,8 +16,17 @@
 + (void)saveDataWithModel:(BRBookModel *)model;
 
 /** 获取文件model
-    @param fileName 文件名称
-    @return 返回model
+ *  @param fileName 文件名称
+ *  @return 返回model
  */
 + (BRBookModel *)getModelWithFileName:(NSString *)fileName;
+
+/**
+ *  @param target 目标字符串
+ *  @param model  书本model
+ *  @return 返回结果model的数组
+ */
++ (NSArray *)searchTargetWithStr:(NSString *)target model:(BRBookModel *)model;
+
++ (NSArray *)getTotalBookList;
 @end

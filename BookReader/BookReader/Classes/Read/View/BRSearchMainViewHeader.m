@@ -8,14 +8,20 @@
 
 #import "BRSearchMainViewHeader.h"
 
+@interface BRSearchMainViewHeader()
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@end
 @implementation BRSearchMainViewHeader
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (instancetype)header
+{
+    BRSearchMainViewHeader *view = [[[NSBundle mainBundle] loadNibNamed:@"BRSearchMainViewHeader" owner:self options:nil] lastObject];
+    return view;
 }
-*/
-
+- (void)setArray:(NSArray *)array
+{
+    _array = array;
+    
+    self.label.text = [NSString stringWithFormat:@"已经找到%ld条结果", array.count];
+}
 @end
