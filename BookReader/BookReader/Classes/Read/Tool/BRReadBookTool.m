@@ -43,6 +43,7 @@
     if (!content) {
         return nil;
     }
+    model = [[BRBookModel alloc] init];
     model.title = fileName;
     model.content = content;
     
