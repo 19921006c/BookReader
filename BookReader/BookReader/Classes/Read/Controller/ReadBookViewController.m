@@ -47,6 +47,16 @@
     self.pageViewController.view.frame = self.view.bounds;
     self.operationView.frame = self.view.bounds;
     self.brightnessLayer.frame = self.view.bounds;
+//    for (UIView *view in self.view.subviews) {
+//        
+//        for (id view2 in view.subviews) {
+//            if ([view2 isKindOfClass:[UIScrollView class]]) {
+//                UIScrollView *scrollView = view2;
+//                scrollView.pagingEnabled = NO;
+//            }
+//            
+//        }
+//    }
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -107,7 +117,7 @@
 {
     if (!_pageViewController) {
         NSDictionary *options = @{UIPageViewControllerOptionInterPageSpacingKey : @(1)};
-        _pageViewController = [[BRPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:options];
+        _pageViewController = [[BRPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationVertical options:options];
     }
     return _pageViewController;
 }

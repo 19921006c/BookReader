@@ -1,4 +1,6 @@
 
+#define kUploadFinishNTKey @"kUploadFinishNTKey"
+
 #import "MyHTTPConnection.h"
 #import "HTTPMessage.h"
 #import "HTTPDataResponse.h"
@@ -168,6 +170,8 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 		if(![[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil]) {
 			HTTPLogError(@"Could not create file at path: %@", filePath);
 		}
+#pragma mark - 文件保存到document成功通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUploadFinishNTKey object:nil];
 		storeFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
 		[uploadedFiles addObject: [NSString stringWithFormat:@"/upload/%@", filename]];
     }

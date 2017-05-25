@@ -34,10 +34,10 @@
     filePath = [documentPath stringByAppendingPathComponent:fileName];
     NSString *content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     if (!content) {
-        content = [NSString stringWithContentsOfFile:fileName encoding:0x80000632 error:nil];
+        content = [NSString stringWithContentsOfFile:filePath encoding:0x80000632 error:nil];
     }
     if (!content) {
-        content = [NSString stringWithContentsOfFile:fileName encoding:0x80000631 error:nil];
+        content = [NSString stringWithContentsOfFile:filePath encoding:0x80000631 error:nil];
     }
     
     if (!content) {
