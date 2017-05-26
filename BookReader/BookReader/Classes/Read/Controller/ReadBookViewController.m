@@ -117,7 +117,7 @@
 {
     if (!_pageViewController) {
         NSDictionary *options = @{UIPageViewControllerOptionInterPageSpacingKey : @(1)};
-        _pageViewController = [[BRPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationVertical options:options];
+        _pageViewController = [[BRPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:options];
     }
     return _pageViewController;
 }

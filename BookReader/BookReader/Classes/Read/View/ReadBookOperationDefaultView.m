@@ -7,7 +7,7 @@
 //
 /** 操作默认页通知PageViewController翻到指定页 */
 #define kOperationDefaultViewNTPageViewControllerPage @"kOperationDefaultViewNTPageViewControllerPage"
-
+#define kChangeContentViewAttributesKey @"kChangeContentViewAttributesKey"
 #import "ReadBookOperationDefaultView.h"
 #import "ReadBookOperationView.h"
 #import "BRBookModel.h"
@@ -16,6 +16,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *processRateLabel;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
+/**
+ *  YES : 选择夜间模式
+ *  NO  : 未选择夜间模式
+ */
+@property (nonatomic, assign) BOOL nightModelMark;
+@property (weak, nonatomic) IBOutlet UIButton *nightModeBtn;
 
 @end
 @implementation ReadBookOperationDefaultView
@@ -75,6 +81,7 @@
         return;
     }
     if (tag == 1006) {//夜间
+        self.nightModelMark = !self.nightModelMark;
         return;
     }
     if (tag == 1007) {//减进度
@@ -91,5 +98,30 @@
     [self.slider setValue:rate];
     self.processRateLabel.text = [NSString stringWithFormat:@"%.2f%%", rate];
     self.titleLabel.text = model.title;
+}
+- (void)setNightModelMark:(BOOL)nightModelMark
+{
+    _nightModelMark = nightModelMark;
+    
+    //设置夜间模式btn样式
+    UIImage *image;
+    NSDictionary *dic;
+    UIColor *fontColor;
+    UIColor *bgColor;
+    if (nightModelMark) {
+        image = [UIImage imageNamed:@"textReading_night_high"];
+        fontColor = [UIColor whiteColor];
+        bgColor = [UIColor blackColor];
+    } else {
+        image = [UIImage imageNamed:@"textReading_night"];
+        fontColor = [UIColor blackColor];
+        bgColor = [UIColor whiteColor];
+        
+    }
+    [self.nightModeBtn setImage:image forState:UIControlStateNormal];
+    //通知ContentView重绘
+    dic = @{@"fontColor" : fontColor,
+            @"bgColor"   : bgColor};
+    [[NSNotificationCenter defaultCenter] postNotificationName:kChangeContentViewAttributesKey object:nil userInfo:dic];
 }
 @end

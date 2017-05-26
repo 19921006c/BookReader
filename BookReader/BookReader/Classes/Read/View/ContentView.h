@@ -11,5 +11,4 @@
 @interface ContentView : UIView
 
 @property (nonatomic, strong) BRPageModel *model;
-
 @end
