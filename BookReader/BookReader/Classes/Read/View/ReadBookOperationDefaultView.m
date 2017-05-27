@@ -106,16 +106,16 @@
     //设置夜间模式btn样式
     UIImage *image;
     NSDictionary *dic;
-    UIColor *fontColor;
-    UIColor *bgColor;
+    NSString *fontColor;
+    NSString *bgColor;
     if (nightModelMark) {
         image = [UIImage imageNamed:@"textReading_night_high"];
-        fontColor = [UIColor whiteColor];
-        bgColor = [UIColor blackColor];
+        fontColor = @"#FFFFFF";
+        bgColor = @"#000000";
     } else {
         image = [UIImage imageNamed:@"textReading_night"];
-        fontColor = [UIColor blackColor];
-        bgColor = [UIColor whiteColor];
+        fontColor = @"#000000";
+        bgColor = @"#FFFFFF";
         
     }
     [self.nightModeBtn setImage:image forState:UIControlStateNormal];
@@ -123,5 +123,6 @@
     dic = @{@"fontColor" : fontColor,
             @"bgColor"   : bgColor};
     [[NSNotificationCenter defaultCenter] postNotificationName:kChangeContentViewAttributesKey object:nil userInfo:dic];
+    [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"121212"];
 }
 @end

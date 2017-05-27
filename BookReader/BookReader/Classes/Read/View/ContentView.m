@@ -21,15 +21,16 @@
 -(instancetype)init
 {
     if (self = [super init]) {
-        self.backgroundColor = [UIColor whiteColor];
+//        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeContentViewAttributes:) name:kChangeContentViewAttributesKey object:nil];
     }
     return self;
 }
 - (void)changeContentViewAttributes:(NSNotification *)notification
 {
-    self.fontColor = notification.userInfo[@"fontColor"];
-    self.bgColor = notification.userInfo[@"bgColor"];
+//    self.fontColor = notification.userInfo[@"fontColor"];
+//    self.bgColor = notification.userInfo[@"bgColor"];
     [self setNeedsDisplay];
 }
 - (void)drawRect:(CGRect)rect
@@ -39,7 +40,8 @@
     if (!self.model.content) {
         return;
     }
-    
+//    self.backgroundColor = self.bgColor;
+    [self superview].backgroundColor = self.bgColor;
     // 步骤1：得到当前用于绘制画布的上下文，用于后续将内容绘制在画布上
     // 因为Core Text要配合Core Graphic 配合使用的，如Core Graphic一样，绘图的时候需要获得当前的上下文进行绘制
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -59,7 +61,7 @@
     CTFontRef font = CTFontCreateWithName((CFStringRef)[UIFont systemFontOfSize:12].fontName, 12, NULL);
     [attrString addAttribute:(id)kCTFontAttributeName value:(__bridge id)font range:NSMakeRange(0, attrString.length)];
     
-    
+//    UIColor *fontColor = [UIColor blackColor];
     [attrString addAttribute:(id)kCTForegroundColorAttributeName value:(id)self.fontColor.CGColor range:NSMakeRange(0, attrString.length)];
     
     // 步骤5：根据AttributedString生成CTFramesetterRef
@@ -80,16 +82,29 @@
 
 - (UIColor *)fontColor
 {
-    if (!_fontColor) {
-        _fontColor = [UIColor blackColor];
-    }
-    return _fontColor;
-}
-- (void)setBgColor:(UIColor *)bgColor
-{
-    _bgColor = bgColor;
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"121212"];
     
-    self.backgroundColor = bgColor;
+    UIColor *color = [UIColor colorWithHexString:dic[@"fontColor"]];
+    
+    if (!color) {
+        color = [UIColor blackColor];
+    }
+    return color;
 }
+- (UIColor *)bgColor
+{
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"121212"];
+    UIColor *color = [UIColor colorWithHexString:dic[@"bgColor"]];
+    if (!color) {
+        color = [UIColor whiteColor];
+    }
+    return color;
+}
+//- (void)setBgColor:(UIColor *)bgColor
+//{
+//    _bgColor = bgColor;
+//    
+//    self.backgroundColor = bgColor;
+//}
 
 @end
