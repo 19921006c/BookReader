@@ -8,6 +8,8 @@
 /** 操作默认页通知PageViewController翻到指定页 */
 #define kOperationDefaultViewNTPageViewControllerPage @"kOperationDefaultViewNTPageViewControllerPage"
 #define kChangeContentViewAttributesKey @"kChangeContentViewAttributesKey"
+#define kNightModeUserdefaultsKey @"kNightModeUserdefaultsKey"
+
 #import "ReadBookOperationDefaultView.h"
 #import "ReadBookOperationView.h"
 #import "BRBookModel.h"
@@ -41,6 +43,9 @@
     [self.slider addTarget:self action:@selector(changeProcessRateValue:) forControlEvents:UIControlEventValueChanged];
     [self.slider addTarget:self action:@selector(scrollEnd:) forControlEvents:UIControlEventTouchUpInside];
     [self.model addObserver:self forKeyPath:@"recordPageNum" options:NSKeyValueObservingOptionNew context:nil];
+    
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:kNightModeUserdefaultsKey];
+    self.nightModelMark = [dic[@"isNight"] boolValue];
 }
 - (void)scrollEnd:(UISlider *)slider
 {
@@ -108,21 +113,23 @@
     NSDictionary *dic;
     NSString *fontColor;
     NSString *bgColor;
+    NSString *isNight;
     if (nightModelMark) {
         image = [UIImage imageNamed:@"textReading_night_high"];
         fontColor = @"#FFFFFF";
         bgColor = @"#000000";
+        isNight = @"YES";
     } else {
         image = [UIImage imageNamed:@"textReading_night"];
         fontColor = @"#000000";
         bgColor = @"#FFFFFF";
-        
+        isNight = @"NO";
     }
     [self.nightModeBtn setImage:image forState:UIControlStateNormal];
     //通知ContentView重绘
     dic = @{@"fontColor" : fontColor,
-            @"bgColor"   : bgColor};
+            @"bgColor"   : bgColor,
+            @"isNight"   : isNight};
     [[NSNotificationCenter defaultCenter] postNotificationName:kChangeContentViewAttributesKey object:nil userInfo:dic];
-    [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"121212"];
 }
 @end

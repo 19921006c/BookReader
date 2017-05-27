@@ -6,6 +6,7 @@
 //  Copyright © 2017年 joe. All rights reserved.
 //
 #define kChangeContentViewAttributesKey @"kChangeContentViewAttributesKey"
+#define kNightModeUserdefaultsKey @"kNightModeUserdefaultsKey"
 
 #import "ContentView.h"
 #import <CoreText/CoreText.h>
@@ -21,7 +22,6 @@
 -(instancetype)init
 {
     if (self = [super init]) {
-//        self.backgroundColor = [UIColor whiteColor];
         self.backgroundColor = [UIColor clearColor];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeContentViewAttributes:) name:kChangeContentViewAttributesKey object:nil];
     }
@@ -29,8 +29,7 @@
 }
 - (void)changeContentViewAttributes:(NSNotification *)notification
 {
-//    self.fontColor = notification.userInfo[@"fontColor"];
-//    self.bgColor = notification.userInfo[@"bgColor"];
+    [[NSUserDefaults standardUserDefaults] setObject:notification.userInfo forKey:kNightModeUserdefaultsKey];
     [self setNeedsDisplay];
 }
 - (void)drawRect:(CGRect)rect
@@ -40,7 +39,6 @@
     if (!self.model.content) {
         return;
     }
-//    self.backgroundColor = self.bgColor;
     [self superview].backgroundColor = self.bgColor;
     // 步骤1：得到当前用于绘制画布的上下文，用于后续将内容绘制在画布上
     // 因为Core Text要配合Core Graphic 配合使用的，如Core Graphic一样，绘图的时候需要获得当前的上下文进行绘制
@@ -82,7 +80,7 @@
 
 - (UIColor *)fontColor
 {
-    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"121212"];
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:kNightModeUserdefaultsKey];
     
     UIColor *color = [UIColor colorWithHexString:dic[@"fontColor"]];
     
@@ -93,18 +91,11 @@
 }
 - (UIColor *)bgColor
 {
-    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"121212"];
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:kNightModeUserdefaultsKey];
     UIColor *color = [UIColor colorWithHexString:dic[@"bgColor"]];
     if (!color) {
         color = [UIColor whiteColor];
     }
     return color;
 }
-//- (void)setBgColor:(UIColor *)bgColor
-//{
-//    _bgColor = bgColor;
-//    
-//    self.backgroundColor = bgColor;
-//}
-
 @end
