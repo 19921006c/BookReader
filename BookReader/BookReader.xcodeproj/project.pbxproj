@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8405AE51EDE6A86007E883A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405AE41EDE6A86007E883A /* UIKit.framework */; };
+		D8405AE71EDE6A94007E883A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405AE61EDE6A94007E883A /* AudioToolbox.framework */; };
+		D8405AF01EDE6AC7007E883A /* libetts_device_simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405AEF1EDE6AC7007E883A /* libetts_device_simulator.a */; };
+		D8405AF21EDE6AE5007E883A /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405AF11EDE6AE5007E883A /* libz.1.2.5.tbd */; };
+		D8405AF41EDE6AF3007E883A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405AF31EDE6AF3007E883A /* libc++.tbd */; };
+		D8405AF61EDE6B00007E883A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405AF51EDE6B00007E883A /* libstdc++.6.0.9.tbd */; };
+		D8405AF81EDE6CA2007E883A /* offline_engine_tmp_license.dat in Resources */ = {isa = PBXBuildFile; fileRef = D8405AF71EDE6CA2007E883A /* offline_engine_tmp_license.dat */; };
+		D8405AFC1EDE6CCD007E883A /* Chinese_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D8405AF91EDE6CCD007E883A /* Chinese_Speech_Female.dat */; };
+		D8405AFD1EDE6CCD007E883A /* Chinese_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D8405AFA1EDE6CCD007E883A /* Chinese_Speech_Male.dat */; };
+		D8405AFE1EDE6CCD007E883A /* Chinese_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D8405AFB1EDE6CCD007E883A /* Chinese_Text.dat */; };
+		D8405B001EDE9D0E007E883A /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405AFF1EDE9D0E007E883A /* libiconv.2.4.0.tbd */; };
+		D8405B021EDE9D20007E883A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405B011EDE9D20007E883A /* AVFoundation.framework */; };
+		D8405B041EDE9D2F007E883A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405B031EDE9D2F007E883A /* CoreTelephony.framework */; };
+		D8405B061EDE9D3B007E883A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8405B051EDE9D3B007E883A /* SystemConfiguration.framework */; };
+		D8405B091EDEA179007E883A /* BRSpeechTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D8405B081EDEA179007E883A /* BRSpeechTool.m */; };
 		D848BFBE1ECD2D6A0012AB3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFB11ECD2D6A0012AB3B /* ViewController.m */; };
 		D848BFBF1ECD2D6A0012AB3B /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFB71ECD2D6A0012AB3B /* ContentViewController.m */; };
 		D848BFC01ECD2D6A0012AB3B /* ReadBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848BFB91ECD2D6A0012AB3B /* ReadBookViewController.m */; };
@@ -94,6 +109,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D8405AE41EDE6A86007E883A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D8405AE61EDE6A94007E883A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D8405AE91EDE6AC7007E883A /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
+		D8405AEA1EDE6AC7007E883A /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
+		D8405AEB1EDE6AC7007E883A /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
+		D8405AEC1EDE6AC7007E883A /* BDSSpeechSynthesizerErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerErrors.h; sourceTree = "<group>"; };
+		D8405AED1EDE6AC7007E883A /* BDSSpeechSynthesizerParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerParams.h; sourceTree = "<group>"; };
+		D8405AEE1EDE6AC7007E883A /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
+		D8405AEF1EDE6AC7007E883A /* libetts_device_simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libetts_device_simulator.a; sourceTree = "<group>"; };
+		D8405AF11EDE6AE5007E883A /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		D8405AF31EDE6AF3007E883A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D8405AF51EDE6B00007E883A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		D8405AF71EDE6CA2007E883A /* offline_engine_tmp_license.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = offline_engine_tmp_license.dat; sourceTree = "<group>"; };
+		D8405AF91EDE6CCD007E883A /* Chinese_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Female.dat; sourceTree = "<group>"; };
+		D8405AFA1EDE6CCD007E883A /* Chinese_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Male.dat; sourceTree = "<group>"; };
+		D8405AFB1EDE6CCD007E883A /* Chinese_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Text.dat; sourceTree = "<group>"; };
+		D8405AFF1EDE9D0E007E883A /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
+		D8405B011EDE9D20007E883A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D8405B031EDE9D2F007E883A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D8405B051EDE9D3B007E883A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D8405B071EDEA179007E883A /* BRSpeechTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSpeechTool.h; sourceTree = "<group>"; };
+		D8405B081EDEA179007E883A /* BRSpeechTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSpeechTool.m; sourceTree = "<group>"; };
 		D848BFB01ECD2D6A0012AB3B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D848BFB11ECD2D6A0012AB3B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D848BFB61ECD2D6A0012AB3B /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
@@ -229,6 +266,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8405B061EDE9D3B007E883A /* SystemConfiguration.framework in Frameworks */,
+				D8405B041EDE9D2F007E883A /* CoreTelephony.framework in Frameworks */,
+				D8405B021EDE9D20007E883A /* AVFoundation.framework in Frameworks */,
+				D8405B001EDE9D0E007E883A /* libiconv.2.4.0.tbd in Frameworks */,
+				D8405AF61EDE6B00007E883A /* libstdc++.6.0.9.tbd in Frameworks */,
+				D8405AF41EDE6AF3007E883A /* libc++.tbd in Frameworks */,
+				D8405AF21EDE6AE5007E883A /* libz.1.2.5.tbd in Frameworks */,
+				D8405AF01EDE6AC7007E883A /* libetts_device_simulator.a in Frameworks */,
+				D8405AE71EDE6A94007E883A /* AudioToolbox.framework in Frameworks */,
+				D8405AE51EDE6A86007E883A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +296,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8405AE31EDE6A86007E883A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8405B051EDE9D3B007E883A /* SystemConfiguration.framework */,
+				D8405B031EDE9D2F007E883A /* CoreTelephony.framework */,
+				D8405B011EDE9D20007E883A /* AVFoundation.framework */,
+				D8405AFF1EDE9D0E007E883A /* libiconv.2.4.0.tbd */,
+				D8405AF51EDE6B00007E883A /* libstdc++.6.0.9.tbd */,
+				D8405AF31EDE6AF3007E883A /* libc++.tbd */,
+				D8405AF11EDE6AE5007E883A /* libz.1.2.5.tbd */,
+				D8405AE61EDE6A94007E883A /* AudioToolbox.framework */,
+				D8405AE41EDE6A86007E883A /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8405AE81EDE6AC7007E883A /* BDSSpeechSynthesizer_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				D8405AF91EDE6CCD007E883A /* Chinese_Speech_Female.dat */,
+				D8405AFA1EDE6CCD007E883A /* Chinese_Speech_Male.dat */,
+				D8405AFB1EDE6CCD007E883A /* Chinese_Text.dat */,
+				D8405AF71EDE6CA2007E883A /* offline_engine_tmp_license.dat */,
+				D8405AE91EDE6AC7007E883A /* BDSBuiltInPlayer.h */,
+				D8405AEA1EDE6AC7007E883A /* BDSSpeechSynthesizer.h */,
+				D8405AEB1EDE6AC7007E883A /* BDSSpeechSynthesizerDelegate.h */,
+				D8405AEC1EDE6AC7007E883A /* BDSSpeechSynthesizerErrors.h */,
+				D8405AED1EDE6AC7007E883A /* BDSSpeechSynthesizerParams.h */,
+				D8405AEE1EDE6AC7007E883A /* BDSSynthesizerLogLevel.h */,
+				D8405AEF1EDE6AC7007E883A /* libetts_device_simulator.a */,
+			);
+			path = BDSSpeechSynthesizer_SDK;
+			sourceTree = "<group>";
+		};
 		D848BFAD1ECD2D6A0012AB3B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D8405AE81EDE6AC7007E883A /* BDSSpeechSynthesizer_SDK */,
 				D86349ED1ED56E8A00ED4DE7 /* CocoaHTTPServer */,
 				D848BFC71ECD313C0012AB3B /* Main */,
 				D848BFC21ECD2EDA0012AB3B /* Category */,
@@ -537,6 +619,7 @@
 				D864583D1ECC570000FA4D7D /* BookReaderTests */,
 				D86458481ECC570000FA4D7D /* BookReaderUITests */,
 				D86458221ECC570000FA4D7D /* Products */,
+				D8405AE31EDE6A86007E883A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -595,6 +678,8 @@
 			children = (
 				D86371041ED4213F009ED7BF /* BRReadBookTool.h */,
 				D86371051ED4213F009ED7BF /* BRReadBookTool.m */,
+				D8405B071EDEA179007E883A /* BRSpeechTool.h */,
+				D8405B081EDEA179007E883A /* BRSpeechTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -707,6 +792,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8405AFD1EDE6CCD007E883A /* Chinese_Speech_Male.dat in Resources */,
 				D86371221ED43F68009ED7BF /* BRSearchMainView.xib in Resources */,
 				D881EF101ECEEA7E008A888F /* ReadBookOperationSettingView.xib in Resources */,
 				D8634A501ED56F1000ED4DE7 /* README.txt in Resources */,
@@ -716,11 +802,14 @@
 				D8634A481ED56F1000ED4DE7 /* About.txt in Resources */,
 				D86349EC1ED5311600ED4DE7 /* BRSearchMainViewCell.xib in Resources */,
 				D881EF121ECEEA85008A888F /* ReadBookOperationLightView.xib in Resources */,
+				D8405AFE1EDE6CCD007E883A /* Chinese_Text.dat in Resources */,
 				D848BFE11ECD98110012AB3B /* ReadBookOperationView.xib in Resources */,
 				D86458341ECC570000FA4D7D /* LaunchScreen.storyboard in Resources */,
 				D86349E71ED52FFC00ED4DE7 /* BRSearchMainViewHeader.xib in Resources */,
 				D8634A461ED56F1000ED4DE7 /* About.txt in Resources */,
 				D86458311ECC570000FA4D7D /* Assets.xcassets in Resources */,
+				D8405AF81EDE6CA2007E883A /* offline_engine_tmp_license.dat in Resources */,
+				D8405AFC1EDE6CCD007E883A /* Chinese_Speech_Female.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +885,7 @@
 				D86458291ECC570000FA4D7D /* AppDelegate.m in Sources */,
 				D86458261ECC570000FA4D7D /* main.m in Sources */,
 				D881EF171ECEEAD5008A888F /* ReadBookOperationDefaultView.m in Sources */,
+				D8405B091EDEA179007E883A /* BRSpeechTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,6 +1029,10 @@
 				GCC_PREFIX_HEADER = /Users/joe/Documents/CodeLib/BookReader/BookReader/BookReader/Classes/Tool/PrefixHeader.pch;
 				INFOPLIST_FILE = BookReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BookReader/Classes/BDSSpeechSynthesizer_SDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Joe.BookReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -953,6 +1047,10 @@
 				GCC_PREFIX_HEADER = /Users/joe/Documents/CodeLib/BookReader/BookReader/BookReader/Classes/Tool/PrefixHeader.pch;
 				INFOPLIST_FILE = BookReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BookReader/Classes/BDSSpeechSynthesizer_SDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Joe.BookReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
