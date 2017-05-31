@@ -10,7 +10,12 @@
 #import "ViewController.h"
 #import "ReadBookViewController.h"
 #import "BRBookModel.h"
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+#import "HTTPServer.h"
+#import "MyHTTPConnection.h"
+#import "BRIPHelper.h"
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>{
+    HTTPServer *httpServer;
+}
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSourceArray;
 @end
@@ -23,6 +28,7 @@ static NSString *const identifier = @"HomeTableViewCellIdentifier";
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightDown)];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadFinish) name:kUploadFinishNTKey object:nil];
 }
 
@@ -58,6 +64,37 @@ static NSString *const identifier = @"HomeTableViewCellIdentifier";
 }
 
 #pragma mark - event response
+- (void)rightDown
+{
+    NSString * webLocalPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Web"];
+    
+    httpServer = [[HTTPServer alloc] init];
+    [httpServer setType:@"_http._tcp."];
+    // webPath是server搜寻HTML等文件的路径
+    [httpServer setDocumentRoot:webLocalPath];
+    [httpServer setConnectionClass:[MyHTTPConnection class]];
+    NSError *err;
+    if ([httpServer start:&err]) {
+        NSLog(@"port %hu",[httpServer listeningPort]);
+    }else{
+        NSLog(@"%@",err);
+    }
+    
+    NSString *ip = [BRIPHelper deviceIPAdress];
+    NSLog(@"ipipip = %@", ip);
+    NSString *address = [NSString stringWithFormat:@"%@:%hu", [BRIPHelper deviceIPAdress], [httpServer listeningPort]];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"wifi传书" message:[NSString stringWithFormat:@"在电脑浏览器输入地址:\n%@", address] preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [httpServer stop];
+    }];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [httpServer stop];
+    }];
+    [alert addAction:cancelAction];
+    [alert addAction:okAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
 #pragma mark - private methods
 - (void)uploadFinish
 {
