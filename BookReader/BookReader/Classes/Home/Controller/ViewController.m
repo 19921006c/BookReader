@@ -67,7 +67,6 @@ static NSString *const identifier = @"HomeTableViewCellIdentifier";
 - (void)rightDown
 {
     NSString * webLocalPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Web"];
-    
     httpServer = [[HTTPServer alloc] init];
     [httpServer setType:@"_http._tcp."];
     // webPath是server搜寻HTML等文件的路径
@@ -113,6 +112,23 @@ static NSString *const identifier = @"HomeTableViewCellIdentifier";
 - (NSArray *)dataSourceArray {
     if (!_dataSourceArray) {
         _dataSourceArray = [BRReadBookTool getTotalBookList];
+    }
+    if (!_dataSourceArray.count) {
+        NSString *path = [[NSBundle mainBundle] resourcePath];
+        NSFileManager *manager = [NSFileManager defaultManager];
+        NSArray *array = [manager contentsOfDirectoryAtPath:path error:nil];
+        NSMutableArray *mulArray = [NSMutableArray array];
+        for (NSString *str in array) {
+            if ([str hasSuffix:@".txt"]) {
+                [mulArray addObject:str];
+                NSString *fileName = [path stringByAppendingPathComponent:str];
+                NSData *data = [NSData dataWithContentsOfFile:fileName];
+                NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+                NSString *filePath = [documentPath stringByAppendingPathComponent:str];
+                [data writeToFile:filePath atomically:YES];
+            }
+        }
+        _dataSourceArray = mulArray;
     }
     return _dataSourceArray;
 }
