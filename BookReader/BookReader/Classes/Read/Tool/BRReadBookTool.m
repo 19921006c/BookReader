@@ -32,6 +32,19 @@
     
     //3. 没有缓存记录, 创建model
     filePath = [documentPath stringByAppendingPathComponent:fileName];
+    NSString *content = [self contentWithFilePath:fileName];
+    model = [[BRBookModel alloc] init];
+    model.title = fileName;
+    model.content = content;
+    
+    //4. 将model缓存到本地
+    [BRReadBookTool saveDataWithModel:model];
+    
+    return model;
+}
+
++ (NSString *)contentWithFilePath:(NSString *)filePath
+{
     NSString *content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     if (!content) {
         content = [NSString stringWithContentsOfFile:filePath encoding:0x80000632 error:nil];
@@ -43,14 +56,7 @@
     if (!content) {
         return nil;
     }
-    model = [[BRBookModel alloc] init];
-    model.title = fileName;
-    model.content = content;
-    
-    //4. 将model缓存到本地
-    [BRReadBookTool saveDataWithModel:model];
-    
-    return model;
+    return content;
 }
 + (NSArray *)searchTargetWithStr:(NSString *)target model:(BRBookModel *)model
 {
@@ -84,6 +90,21 @@
         if ([str hasSuffix:@".txt"]) {
             [mulArray addObject:str];
         }
+    }
+    
+    //没有任何数据时, 添加默认数据
+    if (mulArray.count == 0) {
+        NSString *defaultFileName = @"花间提壶方大厨.txt";
+        NSString *path = [[NSBundle mainBundle] pathForResource:defaultFileName ofType:nil];
+        NSString *content = [self contentWithFilePath:path];
+        
+        BRBookModel *model = [[BRBookModel alloc] init];
+        model.title = defaultFileName;
+        model.content = content;
+        
+        //4. 将model缓存到本地
+        [BRReadBookTool saveDataWithModel:model];
+        [mulArray addObject:defaultFileName];
     }
     return mulArray;
 }

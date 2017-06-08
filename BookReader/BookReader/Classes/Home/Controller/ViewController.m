@@ -66,8 +66,8 @@ static NSString *const identifier = @"HomeTableViewCellIdentifier";
 #pragma mark - event response
 - (void)rightDown
 {
-//    NSString * webLocalPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"web"];
-    NSString *webLocalPath = [[NSBundle mainBundle] resourcePath];
+    NSString * webLocalPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"web"];
+//    NSString *webLocalPath = [[NSBundle mainBundle] resourcePath];
     
     httpServer = [[HTTPServer alloc] init];
     [httpServer setType:@"_http._tcp."];
