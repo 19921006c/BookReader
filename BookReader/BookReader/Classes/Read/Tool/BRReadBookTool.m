@@ -32,7 +32,7 @@
     
     //3. 没有缓存记录, 创建model
     filePath = [documentPath stringByAppendingPathComponent:fileName];
-    NSString *content = [self contentWithFilePath:fileName];
+    NSString *content = [self contentWithFilePath:filePath];
     model = [[BRBookModel alloc] init];
     model.title = fileName;
     model.content = content;
