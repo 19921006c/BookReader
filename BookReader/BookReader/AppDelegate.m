@@ -19,20 +19,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    /** 创建window */
     UIWindow *window = [[UIWindow alloc] initWithFrame:kMainScreenBounds];
     
+    /** 设置window背景色 */
     window.backgroundColor = [UIColor whiteColor];
     
+    /** 创建tabBarControoler */
     BRMainTabBarController *tabVc = [[BRMainTabBarController alloc] init];
     
+    /** 设置window启动控制器 */
     window.rootViewController = tabVc;
     
+    /** 显示window */
     [window makeKeyAndVisible];
     
+    /** 给self.window指向 window */
     self.window = window;
     
-    
-
     return YES;
 }
 
