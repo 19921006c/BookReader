@@ -66,7 +66,8 @@
         while ([content rangeOfString:target].location != NSNotFound) {
             NSRange tmpRange = [content rangeOfString:target];
             NSRange matchRange = NSMakeRange(tmpRange.location, tmpRange.length + 10);
-            NSString *matchStr = [content substringWithRange:matchRange];
+//            NSString *matchStr = [content substringWithRange:matchRange];
+            NSString *matchStr = [content substringFromIndex:matchRange.location];
             
             NSUInteger fromIndex = tmpRange.location + tmpRange.length;
             content = [content substringFromIndex:fromIndex];
